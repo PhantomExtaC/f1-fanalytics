@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-07-20T10:00:00Z",
+  "winner": {
+    "driverId": "max_verstappen",
+    "probability": 0.43
+  },
+  "podium": [
+    {
+      "driverId": "max_verstappen",
+      "probability": 0.43
+    },
+    {
+      "driverId": "lando_norris",
+      "probability": 0.31
+    },
+    {
+      "driverId": "charles_leclerc",
+      "probability": 0.18
+    }
+  ]
+}

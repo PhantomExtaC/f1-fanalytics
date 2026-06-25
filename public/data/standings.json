@@ -1,0 +1,28 @@
+{
+  "drivers": [
+    {
+      "position": 1,
+      "driverId": "max_verstappen",
+      "points": 185,
+      "wins": 5
+    },
+    {
+      "position": 2,
+      "driverId": "lando_norris",
+      "points": 172,
+      "wins": 3
+    }
+  ],
+  "constructors": [
+    {
+      "position": 1,
+      "teamId": "mclaren",
+      "points": 338
+    },
+    {
+      "position": 2,
+      "teamId": "red_bull",
+      "points": 315
+    }
+  ]
+}

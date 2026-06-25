@@ -1,0 +1,13 @@
+{
+  "round": 12,
+  "grandPrix": "Belgian Grand Prix",
+  "trackId": "spa",
+  "country": "Belgium",
+  "date": "2026-07-26",
+  "weather": {
+    "condition": "Cloudy",
+    "airTemperature": 21,
+    "trackTemperature": 31,
+    "rainProbability": 20
+  }
+}

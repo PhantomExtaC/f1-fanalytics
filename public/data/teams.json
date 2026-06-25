@@ -1,0 +1,19 @@
+[
+  {
+    "id": "red_bull",
+    "name": "Red Bull Racing",
+    "principal": "Christian Horner",
+    "base": "Milton Keynes, United Kingdom",
+    "engine": "Honda RBPT",
+    "driverIds": [
+      "max_verstappen",
+      "yuki_tsunoda"
+    ],
+    "wins": 124,
+    "podiums": 285,
+    "championships": 8,
+    "points": 860,
+    "active": true,
+    "logo": "/images/teams/red_bull.png"
+  }
+]
