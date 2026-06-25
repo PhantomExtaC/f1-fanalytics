@@ -1,73 +1,162 @@
-# React + TypeScript + Vite
+# 🏎️ Fanalytics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Fanalytics** is a modern Formula 1 analytics platform that combines historical statistics, interactive dashboards, and machine learning concepts to provide a data-driven view of the sport.
 
-Currently, two official plugins are available:
+The project is designed to serve as both an analytics application and a learning platform for data engineering, visualization, and predictive modeling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Dashboard
 
-## Expanding the ESLint configuration
+* Live-style overview of the Formula 1 season
+* Driver and constructor standings
+* Race calendar and event information
+* Summary statistics and key metrics
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Driver Explorer
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Detailed driver profiles
+* Career statistics
+* Race starts, wins, podiums, and championship information
+* Search, filtering, and sorting capabilities
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Team Explorer
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* Constructor profiles
+* Team performance statistics
+* Historical achievements
+* Driver associations
+
+### Circuit Explorer
+
+* Circuit information and specifications
+* Track length and corner count
+* Historical race statistics
+* Interactive track cards
+
+### Data Visualizations
+
+* Championship progression
+* Comparative statistics
+* Historical trends
+* Performance summaries
+
+### Race Simulator *(Work in Progress)*
+
+* Predict finishing positions based on configurable race conditions
+* Inputs such as driver, constructor, track, weather, tyre strategy, and grid position
+* Planned machine learning integration
+
+---
+
+## Project Architecture
+
+```text
+                 Data Sources
+                      │
+                      ▼
+          Python Data Processing Pipeline
+                      │
+          JSON Generation & Validation
+                      │
+                      ▼
+              Static JSON Data Files
+                      │
+                      ▼
+             React + TypeScript Frontend
+                      │
+                      ▼
+              Responsive Web Dashboard
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The frontend consumes locally generated JSON files rather than querying external APIs directly, providing:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* Faster page loads
+* Consistent data representation
+* Easier deployment
+* Simplified caching
+* Separation between data ingestion and presentation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Technology Stack
+
+### Frontend
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+
+### Data Processing
+
+* Python
+* Pandas
+* Jupyter Notebooks
+
+### Future Machine Learning
+
+* Scikit-learn
+* Random Forests
+* Neural Networks
+* Feature Engineering for race prediction
+
+### Deployment
+
+* GitHub
+* Vercel
+
+---
+
+## Repository Structure
+
+```text
+src/
+  components/
+  pages/
+  services/
+  types/
+
+public/
+  data/
+  images/
+    drivers/
+    teams/
+    tracks/
+
+python_scripts/
+  data_generation/
+  image_download/
+  update_scripts/
 ```
+
+---
+
+## Development Roadmap
+
+* [x] React frontend foundation
+* [x] Responsive page structure
+* [x] JSON-based data architecture
+* [x] Driver, team, and circuit pages
+* [ ] Automated data ingestion pipeline
+* [ ] Historical statistics generation
+* [ ] Interactive visualizations
+* [ ] Race simulation engine
+* [ ] Machine learning prediction models
+* [ ] Scheduled update automation
+
+---
+
+## Vision
+
+Fanalytics aims to demonstrate how software engineering, data pipelines, visualization, and machine learning can be applied to Formula 1 analytics while maintaining a modular and maintainable architecture.
+
+The project emphasizes reproducible data processing, clean frontend design, and extensibility for future analytical features.
+
+---
+
+## License
+
+This project is intended for educational and portfolio purposes. Users should verify the licensing and terms of use for any external datasets, APIs, or media assets incorporated into the project.
