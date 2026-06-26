@@ -9,14 +9,14 @@ import type { Driver } from "../types/driver";
 import type { Team } from "../types/team";
 
 
-const [showActiveOnly, setShowActiveOnly] = useState(false);
-const [sortBy, setSortBy] = useState("alphabetical");
+
 
 
 export default function Drivers() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [teams, setTeams] = useState<Team[]>([]);
-
+  const [showActiveOnly, setShowActiveOnly] = useState(false);
+const [sortBy, setSortBy] = useState("alphabetical");
   useEffect(() => {
     getDrivers().then(setDrivers);
     getTeams().then(setTeams);
