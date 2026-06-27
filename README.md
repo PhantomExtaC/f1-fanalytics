@@ -158,5 +158,7 @@ The project emphasizes reproducible data processing, clean frontend design, and 
 ---
 
 ## License
+Credits to https://github.com/toUpperCase78/formula1-datasets
+And the wikiAPI for the pictures and media utilised in the project
 
 This project is intended for educational and portfolio purposes. Users should verify the licensing and terms of use for any external datasets, APIs, or media assets incorporated into the project.
