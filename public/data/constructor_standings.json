@@ -1,0 +1,101 @@
+[
+  {
+    "id": "mercedes",
+    "position": 1,
+    "points": 262.0,
+    "wins": 6,
+    "teamName": "Mercedes",
+    "nationality": "German",
+    "imagePath": "/images/teams/mercedes.png"
+  },
+  {
+    "id": "ferrari",
+    "position": 2,
+    "points": 190.0,
+    "wins": 1,
+    "teamName": "Ferrari",
+    "nationality": "Italian",
+    "imagePath": "/images/teams/ferrari.png"
+  },
+  {
+    "id": "mclaren",
+    "position": 3,
+    "points": 141.0,
+    "wins": 0,
+    "teamName": "McLaren",
+    "nationality": "British",
+    "imagePath": "/images/teams/mclaren.png"
+  },
+  {
+    "id": "red_bull",
+    "position": 4,
+    "points": 89.0,
+    "wins": 0,
+    "teamName": "Red Bull",
+    "nationality": "Austrian",
+    "imagePath": "/images/teams/red_bull.png"
+  },
+  {
+    "id": "alpine",
+    "position": 5,
+    "points": 57.0,
+    "wins": 0,
+    "teamName": "Alpine F1 Team",
+    "nationality": "French",
+    "imagePath": "/images/teams/alpine.png"
+  },
+  {
+    "id": "rb",
+    "position": 6,
+    "points": 41.0,
+    "wins": 0,
+    "teamName": "RB F1 Team",
+    "nationality": "Italian",
+    "imagePath": "/images/teams/rb.png"
+  },
+  {
+    "id": "haas",
+    "position": 7,
+    "points": 21.0,
+    "wins": 0,
+    "teamName": "Haas F1 Team",
+    "nationality": "American",
+    "imagePath": "/images/teams/haas.png"
+  },
+  {
+    "id": "williams",
+    "position": 8,
+    "points": 11.0,
+    "wins": 0,
+    "teamName": "Williams",
+    "nationality": "British",
+    "imagePath": "/images/teams/williams.png"
+  },
+  {
+    "id": "audi",
+    "position": 9,
+    "points": 2.0,
+    "wins": 0,
+    "teamName": "Audi",
+    "nationality": "German",
+    "imagePath": "/images/teams/audi.png"
+  },
+  {
+    "id": "aston_martin",
+    "position": 10,
+    "points": 1.0,
+    "wins": 0,
+    "teamName": "Aston Martin",
+    "nationality": "British",
+    "imagePath": "/images/teams/aston_martin.png"
+  },
+  {
+    "id": "cadillac",
+    "position": 11,
+    "points": 0.0,
+    "wins": 0,
+    "teamName": "Cadillac F1 Team",
+    "nationality": "American",
+    "imagePath": "/images/teams/cadillac.png"
+  }
+]

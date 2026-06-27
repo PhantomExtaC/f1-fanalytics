@@ -9,9 +9,6 @@ import type { Driver } from "../types/driver";
 import type { Team } from "../types/team";
 
 
-
-
-
 export default function Drivers() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [teams, setTeams] = useState<Team[]>([]);

@@ -2,77 +2,57 @@ import { useEffect, useState } from "react";
 
 import StandingsTable from "../components/cards/StandingsTable";
 
-import { getStandings } from "../services/standings";
-import { getDrivers } from "../services/drivers";
-import { getTeams } from "../services/teams";
-import type { Team } from "../types/team";
-import type { Standings as StandingsType } from "../types/standings";
-import type { Driver } from "../types/driver";
+import { getDriverStandings, getConstructorStandings } from "../services/standings";
+import type { DriverStanding, ConstructorStanding } from "../types/standings";
 
 export default function Standings() {
-  const [standings, setStandings] =
-    useState<StandingsType | null>(null);
-
-  const [drivers, setDrivers] =
-    useState<Driver[]>([]);
+  const [driverStandings, setDriverStandings] = useState<DriverStanding[]>([]);
+  const [constructorStandings, setConstructorStandings] = useState<ConstructorStanding[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getStandings().then(setStandings);
-    getDrivers().then(setDrivers);
+    // Fetch both standalone JSON files in parallel
+    Promise.all([getDriverStandings(), getConstructorStandings()])
+      .then(([driversData, constructorsData]) => {
+        setDriverStandings(driversData);
+        setConstructorStandings(constructorsData);
+      })
+      .catch((err) => console.error("Error loading standings data:", err))
+      .finally(() => setIsLoading(false));
   }, []);
 
-  const [teams, setTeams] = useState<Team[]>([]);
-
-  useEffect(() => {
-    getStandings().then(setStandings);
-    getDrivers().then(setDrivers);
-    getTeams().then(setTeams);
-  }, []);
-
-  if (!standings) {
-    return <div className="p-8">Loading...</div>;
+  if (isLoading) {
+    return <div className="p-8 text-center text-white">Loading Standings...</div>;
   }
 
-  const driverRows = standings.drivers.map((entry) => {
-  const driver = drivers.find(
-    (d) => d.id === entry.driverId
-  );
-
-  return {
+  // Map the flat pipeline data format directly to the rows format expected by StandingsTable
+  const driverRows = driverStandings.map((entry) => ({
     position: entry.position,
-    name: driver?.fullName ?? "Unknown",
+    name: entry.driverName,
     points: entry.points,
     wins: entry.wins,
-  };
-});
+  }));
 
-const constructorRows = standings.constructors.map((entry) => {
-  const team = teams.find(
-    (t) => t.id === entry.teamId
-  );
-
-  return {
+  const constructorRows = constructorStandings.map((entry) => ({
     position: entry.position,
-    name: team?.name ?? "Unknown",
+    name: entry.teamName,
     points: entry.points,
-  };
-});
+    wins: entry.wins, // Added wins here since the pipeline provides it!
+  }));
 
   return (
-  <div className="mx-auto max-w-7xl space-y-8 p-8">
-    <h1 className="text-4xl font-bold">
-      Championship Standings
-    </h1>
+    <div className="mx-auto max-w-7xl space-y-8 p-8 text-white">
+      <h1 className="text-4xl font-bold">Championship Standings</h1>
 
-    <StandingsTable
-      title="Driver Championship"
-      rows={driverRows}
-    />
+      <StandingsTable
+        title="Driver Championship"
+        rows={driverRows}
+      />
 
-    <StandingsTable
-      title="Constructor Championship"
-      rows={constructorRows}
-    />
-  </div>
-);
+      <StandingsTable
+        title="Constructor Championship"
+        rows={constructorRows}
+      />
+    </div>
+  );
 }

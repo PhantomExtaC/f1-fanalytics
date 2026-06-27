@@ -1,23 +1,21 @@
 export interface DriverStanding {
+  id: string;
   position: number;
-
-  driverId: string;
-
   points: number;
-
   wins: number;
+  driverName: string;
+  driverNumber: string;
+  nationality: string;
+  currentTeamId: string | null;
+  imagePath: string;
 }
 
 export interface ConstructorStanding {
+  id: string;
   position: number;
-
-  teamId: string;
-
   points: number;
-}
-
-export interface Standings {
-  drivers: DriverStanding[];
-
-  constructors: ConstructorStanding[];
+  wins: number;
+  teamName: string;
+  nationality: string;
+  imagePath: string;
 }
