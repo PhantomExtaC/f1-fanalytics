@@ -219,7 +219,7 @@
   {
     "id": "gasly",
     "fullName": "Pierre Gasly",
-    "image": "/images/drivers/pierre_gasly.jpg",
+    "image": "/images/drivers/pierre_gasly.png",
     "nationality": "France",
     "number": 10,
     "abbreviation": "GAS",
@@ -429,7 +429,7 @@
   {
     "id": "albon",
     "fullName": "Alexander Albon",
-    "image": "/images/drivers/alex_albon.jpg",
+    "image": "/images/drivers/alex_albon.avif",
     "nationality": "Thailand",
     "number": 23,
     "abbreviation": "ALB",
