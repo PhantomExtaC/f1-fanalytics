@@ -2,7 +2,7 @@
   {
     "id": "antonelli",
     "fullName": "Andrea Kimi Antonelli",
-    "image": "/images/drivers/antonelli.jpg",
+    "image": "/images/drivers/kimi_antonelli.jpg",
     "nationality": "Italy",
     "number": 12,
     "abbreviation": "ANT",
@@ -33,7 +33,7 @@
   {
     "id": "hamilton",
     "fullName": "Lewis Hamilton",
-    "image": "/images/drivers/hamilton.jpg",
+    "image": "/images/drivers/lewis_hamilton.jpg",
     "nationality": "United Kingdom",
     "number": 44,
     "abbreviation": "HAM",
@@ -65,7 +65,7 @@
   {
     "id": "russell",
     "fullName": "George Russell",
-    "image": "/images/drivers/russell.jpg",
+    "image": "/images/drivers/George_Russell.webp",
     "nationality": "United Kingdom",
     "number": 63,
     "abbreviation": "RUS",
@@ -95,7 +95,7 @@
   {
     "id": "leclerc",
     "fullName": "Charles Leclerc",
-    "image": "/images/drivers/leclerc.jpg",
+    "image": "/images/drivers/charles_leclerc.jpg",
     "nationality": "Monaco",
     "number": 16,
     "abbreviation": "LEC",
@@ -125,7 +125,7 @@
   {
     "id": "norris",
     "fullName": "Lando Norris",
-    "image": "/images/drivers/norris.jpg",
+    "image": "/images/drivers/lando_norris.jpg",
     "nationality": "United Kingdom",
     "number": 1,
     "abbreviation": "NOR",
@@ -157,7 +157,7 @@
   {
     "id": "piastri",
     "fullName": "Oscar Piastri",
-    "image": "/images/drivers/piastri.jpg",
+    "image": "/images/drivers/oscar_piastri.jpg",
     "nationality": "Australia",
     "number": 81,
     "abbreviation": "PIA",
@@ -219,7 +219,7 @@
   {
     "id": "gasly",
     "fullName": "Pierre Gasly",
-    "image": "/images/drivers/gasly.jpg",
+    "image": "/images/drivers/pierre_gasly.jpg",
     "nationality": "France",
     "number": 10,
     "abbreviation": "GAS",
@@ -249,7 +249,7 @@
   {
     "id": "hadjar",
     "fullName": "Isack Hadjar",
-    "image": "/images/drivers/hadjar.jpg",
+    "image": "/images/drivers/isack_hadjar.jpg",
     "nationality": "France",
     "number": 6,
     "abbreviation": "HAD",
@@ -279,7 +279,7 @@
   {
     "id": "lawson",
     "fullName": "Liam Lawson",
-    "image": "/images/drivers/lawson.jpg",
+    "image": "/images/drivers/liam_lawson.jpg",
     "nationality": "New Zealand",
     "number": 30,
     "abbreviation": "LAW",
@@ -309,7 +309,7 @@
   {
     "id": "bearman",
     "fullName": "Oliver Bearman",
-    "image": "/images/drivers/bearman.jpg",
+    "image": "/images/drivers/oliver_bearman.jpg",
     "nationality": "United Kingdom",
     "number": 87,
     "abbreviation": "BEA",
@@ -339,7 +339,7 @@
   {
     "id": "colapinto",
     "fullName": "Franco Colapinto",
-    "image": "/images/drivers/colapinto.jpg",
+    "image": "/images/drivers/franco_colapinto.jpg",
     "nationality": "Argentina",
     "number": 43,
     "abbreviation": "COL",
@@ -399,7 +399,7 @@
   {
     "id": "sainz",
     "fullName": "Carlos Sainz",
-    "image": "/images/drivers/sainz.jpg",
+    "image": "/images/drivers/carlos_sainz.jpg",
     "nationality": "Spain",
     "number": 55,
     "abbreviation": "SAI",
@@ -429,7 +429,7 @@
   {
     "id": "albon",
     "fullName": "Alexander Albon",
-    "image": "/images/drivers/albon.jpg",
+    "image": "/images/drivers/alex_albon.jpg",
     "nationality": "Thailand",
     "number": 23,
     "abbreviation": "ALB",
@@ -459,7 +459,7 @@
   {
     "id": "ocon",
     "fullName": "Esteban Ocon",
-    "image": "/images/drivers/ocon.jpg",
+    "image": "/images/drivers/esteban_ocon.jpg",
     "nationality": "France",
     "number": 31,
     "abbreviation": "OCO",
@@ -489,7 +489,7 @@
   {
     "id": "bortoleto",
     "fullName": "Gabriel Bortoleto",
-    "image": "/images/drivers/bortoleto.jpg",
+    "image": "/images/drivers/gabriel_bortoleto.jpg",
     "nationality": "Brazil",
     "number": 5,
     "abbreviation": "BOR",
@@ -519,7 +519,7 @@
   {
     "id": "alonso",
     "fullName": "Fernando Alonso",
-    "image": "/images/drivers/alonso.jpg",
+    "image": "/images/drivers/fernando_alonso.jpg",
     "nationality": "Spain",
     "number": 14,
     "abbreviation": "ALO",
@@ -551,7 +551,7 @@
   {
     "id": "hulkenberg",
     "fullName": "Nico Hülkenberg",
-    "image": "/images/drivers/hulkenberg.jpg",
+    "image": "/images/drivers/nico_hulkenberg.jpg",
     "nationality": "Germany",
     "number": 27,
     "abbreviation": "HUL",
@@ -581,7 +581,7 @@
   {
     "id": "bottas",
     "fullName": "Valtteri Bottas",
-    "image": "/images/drivers/bottas.jpg",
+    "image": "/images/drivers/vallteri_bottas.webp",
     "nationality": "Finland",
     "number": 77,
     "abbreviation": "BOT",
@@ -611,7 +611,7 @@
   {
     "id": "perez",
     "fullName": "Sergio Pérez",
-    "image": "/images/drivers/perez.jpg",
+    "image": "/images/drivers/sergio_perez.webp",
     "nationality": "Mexico",
     "number": 11,
     "abbreviation": "PER",
@@ -641,7 +641,7 @@
   {
     "id": "stroll",
     "fullName": "Lance Stroll",
-    "image": "/images/drivers/stroll.jpg",
+    "image": "/images/drivers/lance_stroll.jpg",
     "nationality": "Canada",
     "number": 18,
     "abbreviation": "STR",
