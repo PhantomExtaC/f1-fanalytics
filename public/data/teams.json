@@ -7,7 +7,7 @@
     "engine": "Honda RBPT",
     "driverIds": [
       "max_verstappen",
-      "yuki_tsunoda"
+      "hadjar"
     ],
     "wins": 124,
     "podiums": 285,
@@ -15,5 +15,175 @@
     "points": 860,
     "active": true,
     "logo": "/images/teams/red_bull.png"
+  },
+  {
+    "id": "mercedes",
+    "name": "Mercedes-AMG Petronas",
+    "principal": "Toto Wolff",
+    "base": "Brackley, United Kingdom",
+    "engine": "Mercedes",
+    "driverIds": [
+      "antonelli",
+      "russell"
+    ],
+    "wins": 125,
+    "podiums": 289,
+    "championships": 8,
+    "points": 262,
+    "active": true,
+    "logo": "/images/teams/mercedes.png"
+  },
+  {
+    "id": "ferrari",
+    "name": "Scuderia Ferrari",
+    "principal": "Frédéric Vasseur",
+    "base": "Maranello, Italy",
+    "engine": "Ferrari",
+    "driverIds": [
+      "hamilton",
+      "leclerc"
+    ],
+    "wins": 245,
+    "podiums": 815,
+    "championships": 16,
+    "points": 190,
+    "active": true,
+    "logo": "/images/teams/ferrari.png"
+  },
+  {
+    "id": "mclaren",
+    "name": "McLaren Formula 1 Team",
+    "principal": "Andrea Stella",
+    "base": "Woking, United Kingdom",
+    "engine": "Mercedes",
+    "driverIds": [
+      "norris",
+      "piastri"
+    ],
+    "wins": 185,
+    "podiums": 495,
+    "championships": 8,
+    "points": 141,
+    "active": true,
+    "logo": "/images/teams/mclaren.png"
+  },
+  {
+    "id": "alpine",
+    "name": "Alpine F1 Team",
+    "principal": "Oliver Oakes",
+    "base": "Enstone, United Kingdom",
+    "engine": "Renault",
+    "driverIds": [
+      "gasly",
+      "colapinto"
+    ],
+    "wins": 1,
+    "podiums": 4,
+    "championships": 0,
+    "points": 57,
+    "active": true,
+    "logo": "/images/teams/alpine.png"
+  },
+  {
+    "id": "rb",
+    "name": "Visa Cash App RB",
+    "principal": "Laurent Mekies",
+    "base": "Faenza, Italy",
+    "engine": "Honda RBPT",
+    "driverIds": [
+      "lawson",
+      "arvid_lindblad"
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "championships": 0,
+    "points": 41,
+    "active": true,
+    "logo": "/images/teams/vcarb.jpg"
+  },
+  {
+    "id": "haas",
+    "name": "MoneyGram Haas F1 Team",
+    "principal": "Ayao Komatsu",
+    "base": "Kannapolis, United States",
+    "engine": "Ferrari",
+    "driverIds": [
+      "bearman",
+      "ocon"
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "championships": 0,
+    "points": 21,
+    "active": true,
+    "logo": "/images/teams/haas.png"
+  },
+  {
+    "id": "williams",
+    "name": "Williams Racing",
+    "principal": "James Vowles",
+    "base": "Grove, United Kingdom",
+    "engine": "Mercedes",
+    "driverIds": [
+      "sainz",
+      "albon"
+    ],
+    "wins": 114,
+    "podiums": 313,
+    "championships": 9,
+    "points": 11,
+    "active": true,
+    "logo": "/images/teams/williams.png"
+  },
+  {
+    "id": "audi",
+    "name": "Audi F1 Team",
+    "principal": "Mattia Binotto",
+    "base": "Hinwil, Switzerland",
+    "engine": "Audi",
+    "driverIds": [
+      "bortoleto",
+      "hulkenberg"
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "championships": 0,
+    "points": 2,
+    "active": true,
+    "logo": "/images/teams/audi.png"
+  },
+  {
+    "id": "aston_martin",
+    "name": "Aston Martin Aramco",
+    "principal": "Mike Krack",
+    "base": "Silverstone, United Kingdom",
+    "engine": "Mercedes",
+    "driverIds": [
+      "alonso",
+      "stroll"
+    ],
+    "wins": 0,
+    "podiums": 9,
+    "championships": 0,
+    "points": 1,
+    "active": true,
+    "logo": "/images/teams/aston_martin.png"
+  },
+  {
+    "id": "cadillac",
+    "name": "Cadillac F1 Team",
+    "principal": "Mario Andretti",
+    "base": "Charlotte, United States",
+    "engine": "Cadillac",
+    "driverIds": [
+      "bottas",
+      "perez"
+    ],
+    "wins": 0,
+    "podiums": 0,
+    "championships": 0,
+    "points": 0,
+    "active": true,
+    "logo": "/images/teams/cadillac.png"
   }
 ]

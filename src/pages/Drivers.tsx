@@ -91,6 +91,9 @@ const [sortBy, setSortBy] = useState("alphabetical");
             (t) => t.id === driver.currentTeamId
           );
 
+          // Temporary debug log
+  console.log({ driverId: driver.id, currentTeamId: driver.currentTeamId, teamsState: teams, foundTeam: team });
+
           return (
             <DriverCard
               key={driver.id}
