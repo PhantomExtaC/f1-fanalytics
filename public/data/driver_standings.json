@@ -2,7 +2,7 @@
   {
     "id": "antonelli",
     "position": 1,
-    "points": 156.0,
+    "points": 179.0,
     "wins": 5,
     "driverName": "Andrea Kimi Antonelli",
     "driverNumber": 12,
@@ -11,9 +11,20 @@
     "imagePath": "/images/drivers/antonelli.jpg"
   },
   {
-    "id": "hamilton",
+    "id": "russell",
     "position": 2,
-    "points": 115.0,
+    "points": 154.0,
+    "wins": 2,
+    "driverName": "George Russell",
+    "driverNumber": 63,
+    "nationality": "British",
+    "currentTeamId": "mercedes",
+    "imagePath": "/images/drivers/russell.jpg"
+  },
+  {
+    "id": "hamilton",
+    "position": 3,
+    "points": 147.0,
     "wins": 1,
     "driverName": "Lewis Hamilton",
     "driverNumber": 44,
@@ -22,21 +33,10 @@
     "imagePath": "/images/drivers/hamilton.jpg"
   },
   {
-    "id": "russell",
-    "position": 3,
-    "points": 106.0,
-    "wins": 1,
-    "driverName": "George Russell",
-    "driverNumber": 63,
-    "nationality": "British",
-    "currentTeamId": "mercedes",
-    "imagePath": "/images/drivers/russell.jpg"
-  },
-  {
     "id": "leclerc",
     "position": 4,
-    "points": 75.0,
-    "wins": 0,
+    "points": 108.0,
+    "wins": 1,
     "driverName": "Charles Leclerc",
     "driverNumber": 16,
     "nationality": "Monegasque",
@@ -46,7 +46,7 @@
   {
     "id": "norris",
     "position": 5,
-    "points": 73.0,
+    "points": 97.0,
     "wins": 0,
     "driverName": "Lando Norris",
     "driverNumber": 1,
@@ -57,7 +57,7 @@
   {
     "id": "piastri",
     "position": 6,
-    "points": 68.0,
+    "points": 82.0,
     "wins": 0,
     "driverName": "Oscar Piastri",
     "driverNumber": 81,
@@ -68,7 +68,7 @@
   {
     "id": "max_verstappen",
     "position": 7,
-    "points": 55.0,
+    "points": 76.0,
     "wins": 0,
     "driverName": "Max Verstappen",
     "driverNumber": 3,
@@ -77,20 +77,9 @@
     "imagePath": "/images/drivers/max_verstappen.jpg"
   },
   {
-    "id": "gasly",
-    "position": 8,
-    "points": 41.0,
-    "wins": 0,
-    "driverName": "Pierre Gasly",
-    "driverNumber": 10,
-    "nationality": "French",
-    "currentTeamId": "alpine",
-    "imagePath": "/images/drivers/gasly.jpg"
-  },
-  {
     "id": "hadjar",
-    "position": 9,
-    "points": 34.0,
+    "position": 8,
+    "points": 52.0,
     "wins": 0,
     "driverName": "Isack Hadjar",
     "driverNumber": 6,
@@ -99,9 +88,20 @@
     "imagePath": "/images/drivers/hadjar.jpg"
   },
   {
+    "id": "gasly",
+    "position": 9,
+    "points": 42.0,
+    "wins": 0,
+    "driverName": "Pierre Gasly",
+    "driverNumber": 10,
+    "nationality": "French",
+    "currentTeamId": "alpine",
+    "imagePath": "/images/drivers/gasly.jpg"
+  },
+  {
     "id": "lawson",
     "position": 10,
-    "points": 28.0,
+    "points": 39.0,
     "wins": 0,
     "driverName": "Liam Lawson",
     "driverNumber": 30,
@@ -110,8 +110,19 @@
     "imagePath": "/images/drivers/lawson.jpg"
   },
   {
-    "id": "bearman",
+    "id": "arvid_lindblad",
     "position": 11,
+    "points": 20.0,
+    "wins": 0,
+    "driverName": "Arvid Lindblad",
+    "driverNumber": 41,
+    "nationality": "British",
+    "currentTeamId": "rb",
+    "imagePath": "/images/drivers/arvid_lindblad.jpg"
+  },
+  {
+    "id": "bearman",
+    "position": 12,
     "points": 18.0,
     "wins": 0,
     "driverName": "Oliver Bearman",
@@ -122,8 +133,8 @@
   },
   {
     "id": "colapinto",
-    "position": 12,
-    "points": 16.0,
+    "position": 13,
+    "points": 18.0,
     "wins": 0,
     "driverName": "Franco Colapinto",
     "driverNumber": 43,
@@ -132,19 +143,19 @@
     "imagePath": "/images/drivers/colapinto.jpg"
   },
   {
-    "id": "arvid_lindblad",
-    "position": 13,
-    "points": 13.0,
+    "id": "bortoleto",
+    "position": 14,
+    "points": 6.0,
     "wins": 0,
-    "driverName": "Arvid Lindblad",
-    "driverNumber": 41,
-    "nationality": "British",
-    "currentTeamId": "rb",
-    "imagePath": "/images/drivers/arvid_lindblad.jpg"
+    "driverName": "Gabriel Bortoleto",
+    "driverNumber": 5,
+    "nationality": "Brazilian",
+    "currentTeamId": "audi",
+    "imagePath": "/images/drivers/bortoleto.jpg"
   },
   {
     "id": "sainz",
-    "position": 14,
+    "position": 15,
     "points": 6.0,
     "wins": 0,
     "driverName": "Carlos Sainz",
@@ -155,7 +166,7 @@
   },
   {
     "id": "albon",
-    "position": 15,
+    "position": 16,
     "points": 5.0,
     "wins": 0,
     "driverName": "Alexander Albon",
@@ -166,7 +177,7 @@
   },
   {
     "id": "ocon",
-    "position": 16,
+    "position": 17,
     "points": 3.0,
     "wins": 0,
     "driverName": "Esteban Ocon",
@@ -174,17 +185,6 @@
     "nationality": "French",
     "currentTeamId": "haas",
     "imagePath": "/images/drivers/ocon.jpg"
-  },
-  {
-    "id": "bortoleto",
-    "position": 17,
-    "points": 2.0,
-    "wins": 0,
-    "driverName": "Gabriel Bortoleto",
-    "driverNumber": 5,
-    "nationality": "Brazilian",
-    "currentTeamId": "audi",
-    "imagePath": "/images/drivers/bortoleto.jpg"
   },
   {
     "id": "alonso",
