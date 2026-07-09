@@ -3,15 +3,21 @@ import type { Track } from "../../types/track";
 interface TrackCardProps {
   track: Track;
 }
-
+const PLACEHOLDER = "/images/tracks/placeholderTracks.webp";
 export default function TrackCard({ track }: TrackCardProps) {
   return (
     <div className="rounded-xl border border-slate-700 bg-slate-900 p-5 shadow-lg">
       <img
-        src={track.layout}
+        src={track.layout ? track.layout : PLACEHOLDER}
         alt={track.name}
+        onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+        e.currentTarget.onerror = null;
+        e.currentTarget.src = PLACEHOLDER;
+      }}
         className="h-48 w-full object-contain"
       />
+
+
 
       <h2 className="mt-4 text-2xl font-bold text-white">
         {track.name}
