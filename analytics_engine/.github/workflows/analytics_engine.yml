@@ -1,0 +1,44 @@
+name: Fanalytics Weekly Data Engine
+
+on:
+  schedule:
+    # Runs every Monday at 08:00 UTC
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+    # Allows you to trigger it manually via a button on the GitHub website
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install Dependencies
+        run: |
+          cd analytics_engine
+          pip install pandas fastf1
+          
+      - name: Execute Fanalytics Pipeline
+        run: |
+          cd analytics_engine
+          python main.py
+          
+      - name: Commit and Push Updated JSONs
+        run: |
+          git config --global user.name "Fanalytics Data Bot"
+          git config --global user.email "bot@fanalytics.local"
+          
+          # Stage the new CSVs and JSONs
+          git add analytics_engine/data/raw/master_historical.csv
+          git add analytics_engine/data/features/*.csv
+          git add analytics_engine/data/export/*.json
+          
+          # Only commit if files actually changed
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated Data Engine Update [Weekly]" && git push)

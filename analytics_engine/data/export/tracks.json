@@ -1,0 +1,356 @@
+[
+  {
+    "circuitId": "1",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 35.0
+  },
+  {
+    "circuitId": "10",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 58.6
+  },
+  {
+    "circuitId": "11",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 47.64
+  },
+  {
+    "circuitId": "12",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 57.0
+  },
+  {
+    "circuitId": "13",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 38.08
+  },
+  {
+    "circuitId": "14",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 27.71
+  },
+  {
+    "circuitId": "15",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 45.58
+  },
+  {
+    "circuitId": "17",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 50.8
+  },
+  {
+    "circuitId": "18",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 53.92
+  },
+  {
+    "circuitId": "2",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 53.86
+  },
+  {
+    "circuitId": "20",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 46.33
+  },
+  {
+    "circuitId": "21",
+    "tireDegradationIndex": 3,
+    "isStreetCircuit": false,
+    "averagePitStops": 34.5
+  },
+  {
+    "circuitId": "22",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 44.67
+  },
+  {
+    "circuitId": "24",
+    "tireDegradationIndex": 3,
+    "isStreetCircuit": false,
+    "averagePitStops": 31.86
+  },
+  {
+    "circuitId": "3",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 49.0
+  },
+  {
+    "circuitId": "32",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 27.89
+  },
+  {
+    "circuitId": "34",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": false,
+    "averagePitStops": 22.5
+  },
+  {
+    "circuitId": "35",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 46.67
+  },
+  {
+    "circuitId": "39",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 57.0
+  },
+  {
+    "circuitId": "4",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 47.79
+  },
+  {
+    "circuitId": "5",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 46.67
+  },
+  {
+    "circuitId": "6",
+    "tireDegradationIndex": 3,
+    "isStreetCircuit": false,
+    "averagePitStops": 31.62
+  },
+  {
+    "circuitId": "68",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 39.67
+  },
+  {
+    "circuitId": "69",
+    "tireDegradationIndex": 3,
+    "isStreetCircuit": false,
+    "averagePitStops": 32.92
+  },
+  {
+    "circuitId": "7",
+    "tireDegradationIndex": 3,
+    "isStreetCircuit": false,
+    "averagePitStops": 34.83
+  },
+  {
+    "circuitId": "70",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 35.69
+  },
+  {
+    "circuitId": "71",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": false,
+    "averagePitStops": 24.5
+  },
+  {
+    "circuitId": "73",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 36.12
+  },
+  {
+    "circuitId": "75",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 42.5
+  },
+  {
+    "circuitId": "76",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 66.0
+  },
+  {
+    "circuitId": "77",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 27.25
+  },
+  {
+    "circuitId": "78",
+    "tireDegradationIndex": 5,
+    "isStreetCircuit": false,
+    "averagePitStops": 48.0
+  },
+  {
+    "circuitId": "79",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": false,
+    "averagePitStops": 24.33
+  },
+  {
+    "circuitId": "80",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 35.0
+  },
+  {
+    "circuitId": "9",
+    "tireDegradationIndex": 4,
+    "isStreetCircuit": false,
+    "averagePitStops": 37.27
+  },
+  {
+    "circuitId": "albert_park",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": true,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "americas",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": false,
+    "averagePitStops": 21.0
+  },
+  {
+    "circuitId": "bahrain",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "baku",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": true,
+    "averagePitStops": 21.0
+  },
+  {
+    "circuitId": "catalunya",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "hungaroring",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 29.0
+  },
+  {
+    "circuitId": "imola",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "interlagos",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "jeddah",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": true,
+    "averagePitStops": 19.0
+  },
+  {
+    "circuitId": "losail",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "marina_bay",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": true,
+    "averagePitStops": 23.0
+  },
+  {
+    "circuitId": "miami",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": true,
+    "averagePitStops": 20.0
+  },
+  {
+    "circuitId": "monaco",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": true,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "monza",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": false,
+    "averagePitStops": 19.0
+  },
+  {
+    "circuitId": "red_bull_ring",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "rodriguez",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 27.0
+  },
+  {
+    "circuitId": "shanghai",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": false,
+    "averagePitStops": 22.0
+  },
+  {
+    "circuitId": "silverstone",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "spa",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 26.0
+  },
+  {
+    "circuitId": "suzuka",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": false,
+    "averagePitStops": 25.0
+  },
+  {
+    "circuitId": "vegas",
+    "tireDegradationIndex": 1,
+    "isStreetCircuit": true,
+    "averagePitStops": 23.0
+  },
+  {
+    "circuitId": "villeneuve",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  },
+  {
+    "circuitId": "yas_marina",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 27.0
+  },
+  {
+    "circuitId": "zandvoort",
+    "tireDegradationIndex": 2,
+    "isStreetCircuit": false,
+    "averagePitStops": 30.0
+  }
+]
