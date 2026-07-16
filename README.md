@@ -9,7 +9,7 @@
 [![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge\&logo=react)]()
 [![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge\&logo=fastapi)]()
 [![Python](https://img.shields.io/badge/Python-Analytics-3776AB?style=for-the-badge\&logo=python)]()
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge\&logo=postgresql)]()
+
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)]()
 
 ---
