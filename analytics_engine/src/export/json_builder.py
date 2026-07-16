@@ -11,7 +11,7 @@ except NameError:
 
 BASE_DIR = SCRIPT_DIR.parent.parent
 FEATURE_DATA_DIR = BASE_DIR / "data" / "features"
-EXPORT_DIR = BASE_DIR.parent / "data" / "export"
+EXPORT_DIR = BASE_DIR.parent / "web_app" / "public" / "data"
 
 # Ensure export directory exists
 EXPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -78,7 +78,7 @@ def build_json_exports():
         json.dump(insights_list, f, indent=2)
         
     # 5. Compile Track Profiles
-    print("   -> Compiling tracks.json...")
+    print("   -> Compiling tracksDeg.json...")
     tracks_list = []
     for _, row in track_df.iterrows():
         tracks_list.append({
@@ -88,8 +88,8 @@ def build_json_exports():
             "averagePitStops": safe_float(row['avg_pit_stops'])
         })
         
-    # Write tracks.json
-    tracks_path = EXPORT_DIR / "tracks.json"
+    # Write tracksDeg.json
+    tracks_path = EXPORT_DIR / "tracksDeg.json"
     with open(tracks_path, 'w') as f:
         json.dump(tracks_list, f, indent=2)
         

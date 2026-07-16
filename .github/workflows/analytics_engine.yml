@@ -2,10 +2,8 @@ name: Fanalytics Weekly Data Engine
 
 on:
   schedule:
-    # Runs every Monday at 08:00 UTC
-    - cron: '0 8 * * 1'
-  workflow_dispatch:
-    # Allows you to trigger it manually via a button on the GitHub website
+    - cron: '0 8 * * 1' # Every Monday at 08:00 UTC
+  workflow_dispatch: # Allows manual trigger button on GitHub
 
 jobs:
   run-pipeline:
@@ -30,15 +28,14 @@ jobs:
           cd analytics_engine
           python main.py
           
-      - name: Commit and Push Updated JSONs
+      - name: Commit and Push Updated JSONs to React UI
         run: |
           git config --global user.name "Fanalytics Data Bot"
           git config --global user.email "bot@fanalytics.local"
           
-          # Stage the new CSVs and JSONs
+          # Stage the updated database and the newly generated React JSON files
           git add analytics_engine/data/raw/master_historical.csv
-          git add analytics_engine/data/features/*.csv
-          git add analytics_engine/data/export/*.json
+          git add web_app/public/data/*.json
           
-          # Only commit if files actually changed
+          # Commit only if changes exist
           git diff --quiet && git diff --staged --quiet || (git commit -m "Automated Data Engine Update [Weekly]" && git push)
