@@ -8,7 +8,7 @@ import Drivers from "./pages/Drivers";
 import Teams from "./pages/Teams";
 import Tracks from "./pages/Tracks";
 import Calendar from "./pages/Calendar";
-import Standings from "./pages/Standings";
+
 import Simulator from "./pages/Simulator";
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/teams" element={<Teams />} />
         <Route path="/tracks" element={<Tracks />} />
         <Route path="/calendar" element={<Calendar />} />
-        <Route path="/standings" element={<Standings />} />
+        
         <Route path="/simulator" element={<Simulator />} />
       </Routes>
 
