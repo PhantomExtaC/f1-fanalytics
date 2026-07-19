@@ -52,8 +52,8 @@ export default function Home() {
 
       {/* Stats */}
       <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <StatCard title="Drivers" value={20} />
-        <StatCard title="Teams" value={10} />
+        <StatCard title="Drivers" value={22} />
+        <StatCard title="Teams" value={11} />
         <StatCard title="Circuits" value={24} />
         <StatCard title="Season" value="2026" />
       </section>
