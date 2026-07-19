@@ -1,0 +1,11 @@
+# Ignore local python virtual environments
+fanalytics/
+venv/
+.env
+
+# Ignore python cache files
+__pycache__/
+*.pyc
+
+# Ignore FastF1 local API caches
+analytics_engine/data/cache/
