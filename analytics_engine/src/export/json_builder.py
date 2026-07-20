@@ -1,7 +1,9 @@
 import pandas as pd
 import json
+import fastf1
 from pathlib import Path
 import math
+from datetime import datetime, timezone
 
 # 1. Setup Paths
 try:
@@ -23,6 +25,50 @@ def safe_float(val):
         return 0.0
     return round(float(val), 2)
 
+def generate_calendar_export(current_year):
+    print(f"   -> Fetching {current_year} track schedule from FastF1...")
+    
+    # Fetch the official schedule for the given year
+    schedule = fastf1.get_event_schedule(current_year)
+    
+    # Filter out pre-season testing (RoundNumber usually 0 for testing)
+    schedule = schedule[schedule['EventFormat'] != 'testing']
+    
+    calendar_list = []
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
+    
+    for _, row in schedule.iterrows():
+        # Force both FastF1 timestamps to be timezone-naive
+        session_1_date = pd.to_datetime(row['Session1Date']).replace(tzinfo=None)
+        event_date = pd.to_datetime(row['EventDate']).replace(tzinfo=None)
+        
+        # Determine Status dynamically based on exact time
+        if now > event_date:
+            # If the current time is past the main race event
+            status = "completed"
+        elif session_1_date <= now <= event_date:
+            # If we are currently inside the race weekend window
+            status = "in_progress"
+        else:
+            # If the weekend hasn't started yet
+            status = "upcoming"
+            
+        calendar_list.append({
+            "round": int(row['RoundNumber']),
+            "grandPrix": row['EventName'],
+            "date": event_date.strftime('%Y-%m-%d'),
+            "sprintWeekend": (row['EventFormat'] == 'sprint'),
+            "status": status
+        })
+        
+    # Write the calendar.json file to the React public directory
+    calendar_path = EXPORT_DIR / "calendar.json"
+    with open(calendar_path, 'w') as f:
+        json.dump(calendar_list, f, indent=2)
+        
+    print(f"   -> calendar.json successfully generated!")
+
+
 def build_json_exports():
     print("📦 Building Advanced JSON Exports for React Charts...")
     
@@ -41,6 +87,12 @@ def build_json_exports():
     
     # Attach driver reference to power features for merging
     power_full = pd.merge(master_df[['raceId', 'year', 'round', 'driverRef']], power_df, on=['raceId', 'driverRef'])
+
+    # =========================================================================
+    # STEP 0: Generate Live Season Calendar (calendar.json)
+    # =========================================================================
+    current_year = int(master_df['year'].max())
+    generate_calendar_export(current_year)
 
     # =========================================================================
     # STEP 1: Current Season Points Progression (pointsProgression.json)

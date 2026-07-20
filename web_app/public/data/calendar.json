@@ -10,21 +10,147 @@
     "round": 2,
     "grandPrix": "Chinese Grand Prix",
     "date": "2026-03-15",
-    "sprintWeekend": true,
-    "status": "cancelled"
+    "sprintWeekend": false,
+    "status": "completed"
   },
   {
     "round": 3,
     "grandPrix": "Japanese Grand Prix",
     "date": "2026-03-29",
     "sprintWeekend": false,
-    "status": "upcoming"
+    "status": "completed"
   },
   {
     "round": 4,
-    "grandPrix": "Bahrain Grand Prix",
-    "date": "2026-04-12",
+    "grandPrix": "Miami Grand Prix",
+    "date": "2026-05-03",
     "sprintWeekend": false,
-    "status": "in_progress"
+    "status": "completed"
+  },
+  {
+    "round": 5,
+    "grandPrix": "Canadian Grand Prix",
+    "date": "2026-05-24",
+    "sprintWeekend": false,
+    "status": "completed"
+  },
+  {
+    "round": 6,
+    "grandPrix": "Monaco Grand Prix",
+    "date": "2026-06-07",
+    "sprintWeekend": false,
+    "status": "completed"
+  },
+  {
+    "round": 7,
+    "grandPrix": "Barcelona Grand Prix",
+    "date": "2026-06-14",
+    "sprintWeekend": false,
+    "status": "completed"
+  },
+  {
+    "round": 8,
+    "grandPrix": "Austrian Grand Prix",
+    "date": "2026-06-28",
+    "sprintWeekend": false,
+    "status": "completed"
+  },
+  {
+    "round": 9,
+    "grandPrix": "British Grand Prix",
+    "date": "2026-07-05",
+    "sprintWeekend": false,
+    "status": "completed"
+  },
+  {
+    "round": 10,
+    "grandPrix": "Belgian Grand Prix",
+    "date": "2026-07-19",
+    "sprintWeekend": false,
+    "status": "completed"
+  },
+  {
+    "round": 11,
+    "grandPrix": "Hungarian Grand Prix",
+    "date": "2026-07-26",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 12,
+    "grandPrix": "Dutch Grand Prix",
+    "date": "2026-08-23",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 13,
+    "grandPrix": "Italian Grand Prix",
+    "date": "2026-09-06",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 14,
+    "grandPrix": "Spanish Grand Prix",
+    "date": "2026-09-13",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 15,
+    "grandPrix": "Azerbaijan Grand Prix",
+    "date": "2026-09-26",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 16,
+    "grandPrix": "Singapore Grand Prix",
+    "date": "2026-10-11",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 17,
+    "grandPrix": "United States Grand Prix",
+    "date": "2026-10-25",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 18,
+    "grandPrix": "Mexico City Grand Prix",
+    "date": "2026-11-01",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 19,
+    "grandPrix": "S\u00e3o Paulo Grand Prix",
+    "date": "2026-11-08",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 20,
+    "grandPrix": "Las Vegas Grand Prix",
+    "date": "2026-11-21",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 21,
+    "grandPrix": "Qatar Grand Prix",
+    "date": "2026-11-29",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 22,
+    "grandPrix": "Abu Dhabi Grand Prix",
+    "date": "2026-12-06",
+    "sprintWeekend": false,
+    "status": "upcoming"
   }
 ]
