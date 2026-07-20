@@ -44,7 +44,7 @@ export default function Home() {
     <div className="mx-auto max-w-7xl p-8 space-y-8">
       {/* Hero */}
       <section className="rounded-xl bg-gradient-to-r from-red-700 to-black p-8 text-white">
-        <h1 className="text-5xl font-bold">Fanalytics</h1>
+        <h1 className="text-5xl font-bold">LapLogic</h1>
         <p className="mt-4 max-w-3xl text-lg">
           Formula 1 analytics platform with standings, statistics, race insights and prediction models.
         </p>
