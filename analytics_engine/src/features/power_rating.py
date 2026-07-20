@@ -73,4 +73,4 @@ def generate_power_ratings():
 
 if __name__ == "__main__":
     generate_power_ratings()
-    input("\nPress Enter to exit...")
+   

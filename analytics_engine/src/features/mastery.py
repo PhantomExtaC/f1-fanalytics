@@ -71,4 +71,4 @@ def generate_mastery_matrix():
 
 if __name__ == "__main__":
     generate_mastery_matrix()
-    input("\nPress Enter to exit...")
+   

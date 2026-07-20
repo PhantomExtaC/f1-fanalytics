@@ -73,4 +73,4 @@ def bootstrap_historical_data(start_year=2000):
 if __name__ == "__main__":
     bootstrap_historical_data(start_year=2000)
     # This prevents the window from closing instantly if you double-clicked it
-    input("\nPress Enter to exit...")
+   

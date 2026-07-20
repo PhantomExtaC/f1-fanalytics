@@ -69,4 +69,4 @@ def generate_track_profiles():
 
 if __name__ == "__main__":
     generate_track_profiles()
-    input("\nPress Enter to exit...")
+    

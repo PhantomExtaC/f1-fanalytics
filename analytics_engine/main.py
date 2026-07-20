@@ -46,4 +46,4 @@ def execute_pipeline():
 
 if __name__ == "__main__":
     execute_pipeline()
-    input("\nPress Enter to exit...")
+   
