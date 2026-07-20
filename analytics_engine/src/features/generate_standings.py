@@ -6,7 +6,7 @@ from fastf1.ergast import Ergast
 ergast = Ergast()
 
 # Define the output path pointing to your React public folder
-OUTPUT_DIR = "../public/data"
+OUTPUT_DIR = "../web_app/public/data"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def generate_driver_standings(season=2026):
