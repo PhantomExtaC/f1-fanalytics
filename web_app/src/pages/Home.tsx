@@ -1,15 +1,26 @@
+import { useEffect, useState } from "react";
+
+
 import StatCard from "../components/cards/StatCard";
 import SectionCard from "../components/cards/SectionCard";
-import { useEffect, useState } from "react";
+
 import StandingsTable from "../components/cards/StandingsTable";
 import { getDriverStandings, getConstructorStandings } from "../services/standings";
 import type { DriverStanding, ConstructorStanding } from "../types/standings";
 
+import { PointsProgressChart } from '../components/charts/PointsProgressChart';
+import { getPointsProgression } from '../services/progression';
+import type { PointsProgression } from '../types/progression';
+
+
 export default function Home() {
   const [driverStandings, setDriverStandings] = useState<DriverStanding[]>([]);
   const [constructorStandings, setConstructorStandings] = useState<ConstructorStanding[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
+  const [isLoadingStandings, setIsLoadingStandings] = useState(true);
+  
+  const [progressionData, setProgressionData] = useState<PointsProgression[]>([]);
+  const [isLoadingProgression, setIsLoadingProgression] = useState<boolean>(true);
+  // Fetch driver and constructor standings on component mount
   useEffect(() => {
     // Fetch both standalone JSON files in parallel
     Promise.all([getDriverStandings(), getConstructorStandings()])
@@ -18,12 +29,23 @@ export default function Home() {
         setConstructorStandings(constructorsData);
       })
       .catch((err) => console.error("Error loading standings data:", err))
-      .finally(() => setIsLoading(false));
+      .finally(() => setIsLoadingStandings(false));
+  }, []);
+//driver season progression
+  useEffect(() => {
+    // Fetch data using your strongly-typed service
+    getPointsProgression()
+      .then((data) => {
+        setProgressionData(data);
+      })
+      .catch((error) => console.error("Failed to load points progression:", error))
+      .finally(() => setIsLoadingProgression(false));
   }, []);
 
-  if (isLoading) {
-    return <div className="p-8 text-center text-white">Loading Standings...</div>;
+  if (isLoadingStandings) {
+    return <div className="p-8 text-center text-white">Loading LapLogic Dashboard...</div>;
   }
+
 
   // Map the flat pipeline data format directly to the rows format expected by StandingsTable
   const driverRows = driverStandings.map((entry) => ({
@@ -73,10 +95,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Progression Chart */}
       <SectionCard title="Championship Progression">
-        <div className="flex h-64 items-center justify-center rounded-lg border border-dashed border-slate-600 text-white">
-          Chart placeholder
-        </div>
+        {isLoadingProgression ? (
+          <div className="flex h-64 items-center justify-center rounded-lg border border-dashed border-slate-600 text-slate-400">
+            Loading Championship Data...
+          </div>
+        ) : (
+          <PointsProgressChart data={progressionData} />
+        )}
       </SectionCard>
 
       <section className="grid grid-cols-1 gap-6 lg:grid-cols-2 text-white">
