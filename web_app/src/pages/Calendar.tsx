@@ -26,12 +26,7 @@ export default function Calendar() {
         </p>
       </div>
 
-      {/* Optional search later */}
-      <input
-        type="text"
-        placeholder="Search Grand Prix..."
-        className="rounded-lg border border-gray-300 px-4 py-2 outline-none focus:border-gray-900 md:w-72"
-      />
+     
     </div>
 
     {/* Table */}
@@ -81,8 +76,8 @@ export default function Calendar() {
                     Sprint
                   </span>
                 ) : (
-                  <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-600">
-                    Standard
+                  <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-orange-600">
+                    No Sprint
                   </span>
                 )}
               </td>
