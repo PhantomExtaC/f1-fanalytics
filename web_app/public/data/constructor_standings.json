@@ -2,8 +2,8 @@
   {
     "id": "mercedes",
     "position": 1,
-    "points": 333.0,
-    "wins": 7,
+    "points": 358.0,
+    "wins": 8,
     "teamName": "Mercedes",
     "nationality": "German",
     "imagePath": "/images/teams/mercedes.png"
@@ -11,7 +11,7 @@
   {
     "id": "ferrari",
     "position": 2,
-    "points": 255.0,
+    "points": 285.0,
     "wins": 2,
     "teamName": "Ferrari",
     "nationality": "Italian",
@@ -20,7 +20,7 @@
   {
     "id": "mclaren",
     "position": 3,
-    "points": 179.0,
+    "points": 195.0,
     "wins": 0,
     "teamName": "McLaren",
     "nationality": "British",
@@ -29,7 +29,7 @@
   {
     "id": "red_bull",
     "position": 4,
-    "points": 128.0,
+    "points": 151.0,
     "wins": 0,
     "teamName": "Red Bull",
     "nationality": "Austrian",
@@ -38,7 +38,7 @@
   {
     "id": "alpine",
     "position": 5,
-    "points": 60.0,
+    "points": 61.0,
     "wins": 0,
     "teamName": "Alpine F1 Team",
     "nationality": "French",
@@ -47,7 +47,7 @@
   {
     "id": "rb",
     "position": 6,
-    "points": 59.0,
+    "points": 61.0,
     "wins": 0,
     "teamName": "RB F1 Team",
     "nationality": "Italian",
@@ -74,7 +74,7 @@
   {
     "id": "audi",
     "position": 9,
-    "points": 6.0,
+    "points": 10.0,
     "wins": 0,
     "teamName": "Audi",
     "nationality": "German",
