@@ -1,13 +1,6 @@
-export interface PredictionEntry {
+export interface Prediction {
   driverId: string;
-
-  probability: number;
-}
-
-export interface Predictions {
-  generatedAt: string;
-
-  winner: PredictionEntry;
-
-  podium: PredictionEntry[];
+  driverName: string;
+  winProbability: number;
+  predictedPosition: number;
 }

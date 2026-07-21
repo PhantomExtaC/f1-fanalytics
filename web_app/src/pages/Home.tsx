@@ -12,6 +12,10 @@ import { PointsProgressChart } from '../components/charts/PointsProgressChart';
 import { getPointsProgression } from '../services/progression';
 import type { PointsProgression } from '../types/progression';
 
+import { getCalendar } from '../services/calendar';
+import type { RaceEvent } from '../types/calendar';
+import { getPredictions } from '../services/predictions';
+import type { Prediction } from '../types/prediction';
 
 export default function Home() {
   const [driverStandings, setDriverStandings] = useState<DriverStanding[]>([]);
@@ -20,6 +24,13 @@ export default function Home() {
   
   const [progressionData, setProgressionData] = useState<PointsProgression[]>([]);
   const [isLoadingProgression, setIsLoadingProgression] = useState<boolean>(true);
+
+  const [nextRace, setNextRace] = useState<RaceEvent | null>(null);
+  const [isLoadingNextRace, setIsLoadingNextRace] = useState(true);
+
+  const [predictions, setPredictions] = useState<Prediction[]>([]);
+  const [isLoadingPredictions, setIsLoadingPredictions] = useState(true);
+
   // Fetch driver and constructor standings on component mount
   useEffect(() => {
     // Fetch both standalone JSON files in parallel
@@ -41,6 +52,27 @@ export default function Home() {
       .catch((error) => console.error("Failed to load points progression:", error))
       .finally(() => setIsLoadingProgression(false));
   }, []);
+
+  
+
+  useEffect(() => {
+    getCalendar()
+      .then((data) => {
+        // Automatically find the very next race on the schedule
+        const upcoming = data.find(race => race.status === "upcoming" || race.status === "in_progress");
+        setNextRace(upcoming || null);
+      })
+      .catch((err) => console.error("Error loading calendar:", err))
+      .finally(() => setIsLoadingNextRace(false));
+  }, []);
+
+  useEffect(() => {
+    getPredictions()
+      .then((data) => setPredictions(data))
+      .catch((err) => console.error("Error loading predictions:", err))
+      .finally(() => setIsLoadingPredictions(false));
+  }, []);
+
 
   if (isLoadingStandings) {
     return <div className="p-8 text-center text-white">Loading LapLogic Dashboard...</div>;
@@ -106,12 +138,51 @@ export default function Home() {
         )}
       </SectionCard>
 
-      <section className="grid grid-cols-1 gap-6 lg:grid-cols-2 text-white">
+      {/* Bottom Section */}
+      <section className="grid grid-cols-1 gap-6 text-white lg:grid-cols-2">
         <SectionCard title="Next Grand Prix">
-          <p>Will load from next_race.json</p>
+          {isLoadingNextRace ? (
+            <div className="flex h-32 items-center justify-center text-slate-400">Loading Calendar...</div>
+          ) : nextRace ? (
+            <div className="flex h-full flex-col justify-center space-y-2">
+              <span className="text-sm font-bold uppercase tracking-wider text-red-500">
+                Round {nextRace.round} {nextRace.sprintWeekend && "• Sprint Weekend"}
+              </span>
+              <span className="text-3xl font-bold">{nextRace.grandPrix}</span>
+              <span className="text-lg text-slate-300">
+                {new Date(nextRace.date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}
+              </span>
+              {nextRace.status === "in_progress" && (
+                <span className="mt-2 w-max rounded bg-green-600 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white shadow-[0_0_10px_rgba(22,163,74,0.5)]">
+                  Live This Weekend
+                </span>
+              )}
+            </div>
+          ) : (
+            <div className="flex h-32 items-center justify-center text-slate-400">Season Completed</div>
+          )}
         </SectionCard>
+
         <SectionCard title="Prediction Preview">
-          <p>Will load from predictions.json</p>
+          {isLoadingPredictions ? (
+            <div className="flex h-32 items-center justify-center text-slate-400">Running Models...</div>
+          ) : predictions.length > 0 ? (
+            <div className="space-y-4 pt-2">
+              {predictions.slice(0, 3).map((pred) => (
+                <div key={pred.driverId} className="flex items-center justify-between border-b border-slate-700/50 pb-3 last:border-0">
+                  <div className="flex items-center gap-4">
+                    <span className="text-xl font-bold text-slate-500">P{pred.predictedPosition}</span>
+                    <span className="text-lg font-medium">{pred.driverName}</span>
+                  </div>
+                  <span className="font-mono text-lg font-bold text-emerald-400">
+                    {(pred.winProbability * 100).toFixed(0)}%
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex h-32 items-center justify-center text-slate-400">No predictions available</div>
+          )}
         </SectionCard>
       </section>
     </div>

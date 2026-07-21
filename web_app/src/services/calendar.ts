@@ -1,6 +1,6 @@
-import type { Race } from "../types/race";
+import type { RaceEvent } from "../types/calendar";
 import { fetchJson } from "./fetchJson";
 
-export async function getCalendar(): Promise<Race[]> {
-  return fetchJson<Race[]>("/data/calendar.json");
+export function getCalendar(): Promise<RaceEvent[]> {
+  return fetchJson<RaceEvent[]>("/data/calendar.json");
 }
