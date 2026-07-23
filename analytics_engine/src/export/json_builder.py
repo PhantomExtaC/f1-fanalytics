@@ -4,7 +4,7 @@ import fastf1
 from pathlib import Path
 import math
 from datetime import datetime, timezone
-
+from prediction_engine import generate_predictions
 # 1. Setup Paths
 try:
     SCRIPT_DIR = Path(__file__).resolve().parent
@@ -190,7 +190,10 @@ def build_json_exports():
         
     with open(EXPORT_DIR / "tracksDeg.json", 'w') as f:
         json.dump(tracks_list, f, indent=2)
-        
+
+    
+    generate_predictions(current_year)
+      
     print(f"✅ Data Factory Export Complete! React data lake refreshed in: {EXPORT_DIR}")
 
 if __name__ == "__main__":
