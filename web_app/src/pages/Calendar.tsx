@@ -8,9 +8,16 @@ export default function Calendar() {
   const [calendar, setCalendar] = useState<Race[]>([]);
 
   useEffect(() => {
-    getCalendar().then(setCalendar);
+    getCalendar().then((data) => {
+      // Map over the data to add the missing required properties
+      const formattedCalendar = data.map((event: any) => ({
+        ...event,
+        trackId: event.trackId || "unknown-track",
+        country: event.country || "TBD",
+      }));
+      setCalendar(formattedCalendar);
+    });
   }, []);
-
   return (
 <div className="mx-auto max-w-7xl p-8">
   <div className="relative flex flex-col w-full overflow-hidden rounded-xl bg-gray-500 shadow-md">
