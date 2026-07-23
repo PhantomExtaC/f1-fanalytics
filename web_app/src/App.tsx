@@ -10,6 +10,7 @@ import Tracks from "./pages/Tracks";
 import Calendar from "./pages/Calendar";
 
 import Simulator from "./pages/Simulator";
+import RaceHub from "./pages/RaceHub";
 
 export default function App() {
   return (
@@ -22,7 +23,7 @@ export default function App() {
         <Route path="/teams" element={<Teams />} />
         <Route path="/tracks" element={<Tracks />} />
         <Route path="/calendar" element={<Calendar />} />
-        
+        <Route path="/race-hub" element={<RaceHub />} />
         <Route path="/simulator" element={<Simulator />} />
       </Routes>
 

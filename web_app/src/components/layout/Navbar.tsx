@@ -3,11 +3,14 @@ import { NavLink } from "react-router-dom";
 
 const links = [
   { to: "/", label: "Home" },
+  { to: "/race-hub", label: "Race Hub" },
   { to: "/drivers", label: "Drivers" },
   { to: "/teams", label: "Teams" },
   { to: "/tracks", label: "Tracks" },
   { to: "/calendar", label: "Calendar" },
+  
   { to: "/simulator", label: "Simulator" },
+  
 ];
 
 export default function Navbar() {

@@ -1,0 +1,41 @@
+{
+  "track": {
+    "circuitName": "Circuit de Spa-Francorchamps",
+    "layoutType": "High Speed / Low Downforce",
+    "pitStopDelta": 19.5,
+    "drsZones": 2
+  },
+  "weather": {
+    "airTemp": 18,
+    "trackTemp": 24,
+    "rainProbability": 65,
+    "condition": "Overcast"
+  },
+  "telemetry": {
+    "fastestSectors": {
+      "sector1": "Max Verstappen",
+      "sector2": "Lando Norris",
+      "sector3": "Max Verstappen"
+    },
+    "longRunPace": [
+      {
+        "driverId": "lando_norris",
+        "driverName": "Lando Norris",
+        "avgLapTime": "1:48.230",
+        "tireCompound": "Medium"
+      },
+      {
+        "driverId": "max_verstappen",
+        "driverName": "Max Verstappen",
+        "avgLapTime": "1:48.450",
+        "tireCompound": "Hard"
+      },
+      {
+        "driverId": "charles_leclerc",
+        "driverName": "Charles Leclerc",
+        "avgLapTime": "1:48.910",
+        "tireCompound": "Medium"
+      }
+    ]
+  }
+}

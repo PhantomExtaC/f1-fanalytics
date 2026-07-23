@@ -5,6 +5,9 @@ from pathlib import Path
 import math
 from datetime import datetime, timezone
 from prediction_engine import generate_predictions
+
+from weekend_builder import build_weekend_state
+
 # 1. Setup Paths
 try:
     SCRIPT_DIR = Path(__file__).resolve().parent
@@ -191,6 +194,8 @@ def build_json_exports():
     with open(EXPORT_DIR / "tracksDeg.json", 'w') as f:
         json.dump(tracks_list, f, indent=2)
 
+
+    build_weekend_state(current_year)
     
     generate_predictions(current_year)
       
