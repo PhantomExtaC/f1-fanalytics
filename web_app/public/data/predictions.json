@@ -1,62 +1,20 @@
 [
   {
-    "driverId": "charles_leclerc",
-    "driverName": "Charles Leclerc",
-    "winProbability": 0.155,
+    "driverId": "lando_norris",
+    "driverName": "Lando Norris",
+    "winProbability": 0.456,
     "predictedPosition": 1
-  },
-  {
-    "driverId": "george_russell",
-    "driverName": "George Russell",
-    "winProbability": 0.142,
-    "predictedPosition": 2
-  },
-  {
-    "driverId": "kimi_antonelli",
-    "driverName": "Kimi Antonelli",
-    "winProbability": 0.132,
-    "predictedPosition": 3
-  },
-  {
-    "driverId": "lewis_hamilton",
-    "driverName": "Lewis Hamilton",
-    "winProbability": 0.122,
-    "predictedPosition": 4
   },
   {
     "driverId": "max_verstappen",
     "driverName": "Max Verstappen",
-    "winProbability": 0.109,
-    "predictedPosition": 5
+    "winProbability": 0.376,
+    "predictedPosition": 2
   },
   {
-    "driverId": "isack_hadjar",
-    "driverName": "Isack Hadjar",
-    "winProbability": 0.086,
-    "predictedPosition": 6
-  },
-  {
-    "driverId": "lando_norris",
-    "driverName": "Lando Norris",
-    "winProbability": 0.079,
-    "predictedPosition": 7
-  },
-  {
-    "driverId": "oscar_piastri",
-    "driverName": "Oscar Piastri",
-    "winProbability": 0.073,
-    "predictedPosition": 8
-  },
-  {
-    "driverId": "liam_lawson",
-    "driverName": "Liam Lawson",
-    "winProbability": 0.033,
-    "predictedPosition": 9
-  },
-  {
-    "driverId": "arvid_lindblad",
-    "driverName": "Arvid Lindblad",
-    "winProbability": 0.03,
-    "predictedPosition": 10
+    "driverId": "charles_leclerc",
+    "driverName": "Charles Leclerc",
+    "winProbability": 0.168,
+    "predictedPosition": 3
   }
 ]
