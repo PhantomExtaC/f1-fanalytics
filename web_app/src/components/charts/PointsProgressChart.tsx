@@ -78,7 +78,7 @@ export const PointsProgressChart: React.FC<PointsProgressChartProps> = ({ data }
   }
 
   return (
-    <div className="h-[450px] w-full">
+    <div className="h-112.5 w-full">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data} margin={{ top: 20, right: 30, left: 10, bottom: 20 }}>
           <CartesianGrid strokeDasharray="3 3" opacity={0.3} vertical={false} />
