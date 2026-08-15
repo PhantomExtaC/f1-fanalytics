@@ -106,48 +106,55 @@
   },
   {
     "round": 16,
+    "grandPrix": "Bahrain Grand Prix",
+    "date": "2026-10-04",
+    "sprintWeekend": false,
+    "status": "upcoming"
+  },
+  {
+    "round": 17,
     "grandPrix": "Singapore Grand Prix",
     "date": "2026-10-11",
     "sprintWeekend": false,
     "status": "upcoming"
   },
   {
-    "round": 17,
+    "round": 18,
     "grandPrix": "United States Grand Prix",
     "date": "2026-10-25",
     "sprintWeekend": false,
     "status": "upcoming"
   },
   {
-    "round": 18,
+    "round": 19,
     "grandPrix": "Mexico City Grand Prix",
     "date": "2026-11-01",
     "sprintWeekend": false,
     "status": "upcoming"
   },
   {
-    "round": 19,
+    "round": 20,
     "grandPrix": "S\u00e3o Paulo Grand Prix",
     "date": "2026-11-08",
     "sprintWeekend": false,
     "status": "upcoming"
   },
   {
-    "round": 20,
+    "round": 21,
     "grandPrix": "Las Vegas Grand Prix",
     "date": "2026-11-21",
     "sprintWeekend": false,
     "status": "upcoming"
   },
   {
-    "round": 21,
+    "round": 22,
     "grandPrix": "Qatar Grand Prix",
     "date": "2026-11-29",
     "sprintWeekend": false,
     "status": "upcoming"
   },
   {
-    "round": 22,
+    "round": 23,
     "grandPrix": "Abu Dhabi Grand Prix",
     "date": "2026-12-06",
     "sprintWeekend": false,

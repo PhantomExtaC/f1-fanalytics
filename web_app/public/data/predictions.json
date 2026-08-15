@@ -2,19 +2,19 @@
   {
     "driverId": "lando_norris",
     "driverName": "Lando Norris",
-    "winProbability": 0.456,
+    "winProbability": 0.481,
     "predictedPosition": 1
   },
   {
     "driverId": "max_verstappen",
     "driverName": "Max Verstappen",
-    "winProbability": 0.376,
+    "winProbability": 0.346,
     "predictedPosition": 2
   },
   {
     "driverId": "charles_leclerc",
     "driverName": "Charles Leclerc",
-    "winProbability": 0.168,
+    "winProbability": 0.173,
     "predictedPosition": 3
   }
 ]

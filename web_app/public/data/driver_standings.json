@@ -2,7 +2,7 @@
   {
     "id": "antonelli",
     "position": 1,
-    "points": 204.0,
+    "points": 219.0,
     "wins": 6,
     "driverName": "Andrea Kimi Antonelli",
     "driverNumber": 12,
@@ -13,7 +13,7 @@
   {
     "id": "hamilton",
     "position": 2,
-    "points": 159.0,
+    "points": 169.0,
     "wins": 1,
     "driverName": "Lewis Hamilton",
     "driverNumber": 44,
@@ -24,7 +24,7 @@
   {
     "id": "russell",
     "position": 3,
-    "points": 154.0,
+    "points": 160.0,
     "wins": 2,
     "driverName": "George Russell",
     "driverNumber": 63,
@@ -35,7 +35,7 @@
   {
     "id": "leclerc",
     "position": 4,
-    "points": 126.0,
+    "points": 138.0,
     "wins": 1,
     "driverName": "Charles Leclerc",
     "driverNumber": 16,
@@ -46,8 +46,8 @@
   {
     "id": "norris",
     "position": 5,
-    "points": 103.0,
-    "wins": 0,
+    "points": 128.0,
+    "wins": 1,
     "driverName": "Lando Norris",
     "driverNumber": 1,
     "nationality": "British",
@@ -55,8 +55,19 @@
     "imagePath": "/images/drivers/norris.jpg"
   },
   {
-    "id": "piastri",
+    "id": "max_verstappen",
     "position": 6,
+    "points": 109.0,
+    "wins": 0,
+    "driverName": "Max Verstappen",
+    "driverNumber": 3,
+    "nationality": "Dutch",
+    "currentTeamId": "red_bull",
+    "imagePath": "/images/drivers/max_verstappen.jpg"
+  },
+  {
+    "id": "piastri",
+    "position": 7,
     "points": 92.0,
     "wins": 0,
     "driverName": "Oscar Piastri",
@@ -66,20 +77,9 @@
     "imagePath": "/images/drivers/piastri.jpg"
   },
   {
-    "id": "max_verstappen",
-    "position": 7,
-    "points": 91.0,
-    "wins": 0,
-    "driverName": "Max Verstappen",
-    "driverNumber": 3,
-    "nationality": "Dutch",
-    "currentTeamId": "red_bull",
-    "imagePath": "/images/drivers/max_verstappen.jpg"
-  },
-  {
     "id": "hadjar",
     "position": 8,
-    "points": 60.0,
+    "points": 68.0,
     "wins": 0,
     "driverName": "Isack Hadjar",
     "driverNumber": 6,
@@ -88,8 +88,19 @@
     "imagePath": "/images/drivers/hadjar.jpg"
   },
   {
-    "id": "gasly",
+    "id": "lawson",
     "position": 9,
+    "points": 43.0,
+    "wins": 0,
+    "driverName": "Liam Lawson",
+    "driverNumber": 30,
+    "nationality": "New Zealander",
+    "currentTeamId": "rb",
+    "imagePath": "/images/drivers/lawson.jpg"
+  },
+  {
+    "id": "gasly",
+    "position": 10,
     "points": 42.0,
     "wins": 0,
     "driverName": "Pierre Gasly",
@@ -99,20 +110,9 @@
     "imagePath": "/images/drivers/gasly.jpg"
   },
   {
-    "id": "lawson",
-    "position": 10,
-    "points": 39.0,
-    "wins": 0,
-    "driverName": "Liam Lawson",
-    "driverNumber": 30,
-    "nationality": "New Zealander",
-    "currentTeamId": "rb",
-    "imagePath": "/images/drivers/lawson.jpg"
-  },
-  {
     "id": "arvid_lindblad",
     "position": 11,
-    "points": 22.0,
+    "points": 23.0,
     "wins": 0,
     "driverName": "Arvid Lindblad",
     "driverNumber": 41,
@@ -187,8 +187,19 @@
     "imagePath": "/images/drivers/ocon.jpg"
   },
   {
-    "id": "alonso",
+    "id": "hulkenberg",
     "position": 18,
+    "points": 2.0,
+    "wins": 0,
+    "driverName": "Nico H\u00fclkenberg",
+    "driverNumber": 27,
+    "nationality": "German",
+    "currentTeamId": "audi",
+    "imagePath": "/images/drivers/hulkenberg.jpg"
+  },
+  {
+    "id": "alonso",
+    "position": 19,
     "points": 1.0,
     "wins": 0,
     "driverName": "Fernando Alonso",
@@ -198,19 +209,19 @@
     "imagePath": "/images/drivers/alonso.jpg"
   },
   {
-    "id": "hulkenberg",
-    "position": 19,
+    "id": "stroll",
+    "position": 20,
     "points": 0.0,
     "wins": 0,
-    "driverName": "Nico H\u00fclkenberg",
-    "driverNumber": 27,
-    "nationality": "German",
-    "currentTeamId": "audi",
-    "imagePath": "/images/drivers/hulkenberg.jpg"
+    "driverName": "Lance Stroll",
+    "driverNumber": 18,
+    "nationality": "Canadian",
+    "currentTeamId": "aston_martin",
+    "imagePath": "/images/drivers/stroll.jpg"
   },
   {
     "id": "bottas",
-    "position": 20,
+    "position": 21,
     "points": 0.0,
     "wins": 0,
     "driverName": "Valtteri Bottas",
@@ -221,7 +232,7 @@
   },
   {
     "id": "perez",
-    "position": 21,
+    "position": 22,
     "points": 0.0,
     "wins": 0,
     "driverName": "Sergio P\u00e9rez",
@@ -229,16 +240,5 @@
     "nationality": "Mexican",
     "currentTeamId": "cadillac",
     "imagePath": "/images/drivers/perez.jpg"
-  },
-  {
-    "id": "stroll",
-    "position": 22,
-    "points": 0.0,
-    "wins": 0,
-    "driverName": "Lance Stroll",
-    "driverNumber": 18,
-    "nationality": "Canadian",
-    "currentTeamId": "aston_martin",
-    "imagePath": "/images/drivers/stroll.jpg"
   }
 ]

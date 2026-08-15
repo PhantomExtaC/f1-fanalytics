@@ -1,4 +1,4 @@
-name: Fanalytics Weekly Data Engine
+name: LapLogic Weekly Data Engine
 
 on:
   schedule:
@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Required for pushing changes back to the repository
-    
+      
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           
@@ -25,19 +25,20 @@ jobs:
           cd analytics_engine
           pip install pandas fastf1
           
-      - name: Execute Fanalytics Pipeline
+      - name: Execute LapLogic Pipeline
         run: |
           cd analytics_engine
           python main.py
           
       - name: Commit and Push Updated JSONs to React UI
         run: |
-          git config --global user.name "Fanalytics Data Bot"
-          git config --global user.email "bot@fanalytics.local"
+          git config --global user.name "LapLogic Data Bot"
+          git config --global user.email "bot@laplogic.local"
           
           # Stage the updated database and the newly generated React JSON files
           git add analytics_engine/data/raw/master_historical.csv 
-          git add web_app/public/data/*.json
+          git add analytics_engine/data/features/
+          git add web_app/public/data/
           
           # Commit only if changes exist
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated Data Engine Update [Weekly]" && git push)
+          git diff --staged --quiet || (git commit -m "Automated Data Engine Update [Weekly]" && git push)
