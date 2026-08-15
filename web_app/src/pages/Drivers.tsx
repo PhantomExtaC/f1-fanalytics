@@ -13,7 +13,7 @@ export default function Drivers() {
   const [drivers, setDrivers] = useState<Driver[]>([]);
   const [teams, setTeams] = useState<Team[]>([]);
   const [showActiveOnly, setShowActiveOnly] = useState(false);
-const [sortBy, setSortBy] = useState("alphabetical");
+  const [sortBy, setSortBy] = useState("alphabetical");
   useEffect(() => {
     getDrivers().then(setDrivers);
     getTeams().then(setTeams);
