@@ -3,4 +3,9 @@ export interface Prediction {
   driverName: string;
   winProbability: number;
   predictedPosition: number;
+  insights?: {
+    trackMastery: number;
+    teamMomentum: number;
+    driverMomentum: number;
+  };
 }

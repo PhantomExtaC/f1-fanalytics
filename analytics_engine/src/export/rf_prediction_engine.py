@@ -3,112 +3,147 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from pathlib import Path
 
-EXPORT_DIR = Path(__file__).resolve().parent.parent.parent.parent / "web_app" / "public" / "data"
+# Paths
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+PROCESSED_MATRIX_PATH = BASE_DIR / "data" / "processed" / "model_training_matrix.csv"
+FEATURES_DIR = BASE_DIR / "data" / "features"
+EXPORT_DIR = BASE_DIR.parent / "web_app" / "public" / "data"
 
-def parse_laptime_str(time_str: str) -> float:
-    try:
-        minutes, seconds = time_str.split(":")
-        return int(minutes) * 60 + float(seconds)
-    except Exception:
-        return 0.0
+# Consistent feature list used for both Training and Inference
+MODEL_FEATURES = [
+    'grid',
+    'driver_overall_avg',
+    'driver_track_avg',
+    'driver_street_avg',
+    'team_momentum',
+    'driver_momentum',
+    'driver_racecraft_index',
+    'tire_deg_index',
+    'is_street'
+]
 
-def get_training_data():
-    """
-    In production, this queries your historical database. 
-    For now, this is the schema the Random Forest needs to learn 
-    the interactions between Track Temp, Pit Delta, and FP2 Pace.
-    """
-    # Features: [Track_Temp, Pit_Delta, FP2_Pace_Deficit_To_Leader]
-    # Target: 1 (Won the race) or 0 (Did not win)
-    data = {
-        "track_temp": [35.0, 42.0, 22.0, 25.0, 45.0, 30.0],
-        "pit_delta":  [20.5, 24.0, 16.0, 19.5, 22.0, 18.0],
-        "fp2_deficit": [0.0, 0.4, 0.1, 1.2, 0.0, 0.5],
-        "won_race":    [1, 0, 1, 0, 1, 0] 
-    }
-    return pd.DataFrame(data)
+
 
 def run_rf_predictions():
     print("🌲 Booting LapLogic Random Forest Engine...")
 
+    # 0. Verify and Load Training Matrix
+    if not PROCESSED_MATRIX_PATH.exists():
+        print(f"❌ Error: {PROCESSED_MATRIX_PATH} not found. Run build_dataset.py first!")
+        return
+
     # 1. Train the Model
-    df_train = get_training_data()
-    X_train = df_train[["track_temp", "pit_delta", "fp2_deficit"]]
+    df_train = pd.read_csv(PROCESSED_MATRIX_PATH)
+    X_train = df_train[MODEL_FEATURES]
     y_train = df_train["won_race"]
 
-    model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)
+    model = RandomForestClassifier(n_estimators=100, max_depth=6, random_state=42)
     model.fit(X_train, y_train)
-    print("   -> Model trained on historical multi-variable data.")
+    print(f"   -> Model trained on {len(df_train)} historical samples across {len(MODEL_FEATURES)} features.")
 
-    # 2. Load Current Weekend State
+    # 2. Load Current Weekend Context
     weekend_file = EXPORT_DIR / "weekend_state.json"
-    if not weekend_file.exists():
-        print("   -> Error: weekend_state.json not found. Run weekend_builder.py first.")
-        return
-
-    with open(weekend_file, 'r', encoding='utf-8') as f:
-        state = json.load(f)
-
-    track_temp = state.get("weather", {}).get("trackTemp", 30.0)
-    pit_delta = state.get("track", {}).get("pitStopDelta", 20.0)
-    fp2_data = state.get("telemetry", {}).get("longRunPace", [])
-
-    if not fp2_data:
-        print("   -> Error: No FP2 data available in weekend_state.json to make RF predictions.")
-        return
-
-    # 3. Prepare Live Features
-    parsed = []
-    for item in fp2_data:
-        sec = parse_laptime_str(item.get("avgLapTime", ""))
-        if sec > 0:
-            parsed.append({"driverId": item["driverId"], "driverName": item["driverName"], "seconds": sec})
-
-    fastest_time = min(p["seconds"] for p in parsed)
+    upcoming_drivers = []
     
-    live_features = []
-    for p in parsed:
-        deficit = p["seconds"] - fastest_time
-        live_features.append([track_temp, pit_delta, deficit])
+    if weekend_file.exists():
+        with open(weekend_file, 'r', encoding='utf-8') as f:
+            state = json.load(f)
+            long_runs = state.get("telemetry", {}).get("longRunPace", [])
+            upcoming_drivers = [item["driverId"] for item in long_runs]
 
-    X_live = pd.DataFrame(live_features, columns=["track_temp", "pit_delta", "fp2_deficit"])
+    # Fallback list of modern grid drivers if weekend_state.json is empty
+    if not upcoming_drivers:
+        upcoming_drivers = [
+            "max_verstappen", "lando_norris", "charles_leclerc", "oscar_piastri",
+            "lewis_hamilton", "george_russell", "carlos_sainz", "fernando_alonso"
+        ]
 
-    # 4. Predict Probabilities
-    # .predict_proba returns an array like [Prob_Loss, Prob_Win]
-    probabilities = model.predict_proba(X_live)[:, 1] 
+    # 3. Pull latest features for upcoming drivers from data/features/
+    df_mastery = pd.read_csv(FEATURES_DIR / "mastery_matrix.csv")
+    df_power = pd.read_csv(FEATURES_DIR / "power_ratings.csv")
+    df_track = pd.read_csv(FEATURES_DIR / "track_profiles.csv")
 
-    predictions = []
-    for i, p in enumerate(parsed):
-        predictions.append({
-            "driverId": p["driverId"],
-            "driverName": p["driverName"],
-            "winProbability": round(float(probabilities[i]), 3)
+    latest_mastery = df_mastery.sort_values("raceId").groupby("driverRef").last().reset_index()
+    latest_power = df_power.sort_values("raceId").groupby("driverRef").last().reset_index()
+    latest_track = df_track.iloc[0]
+
+    # Map FastF1 3-letter codes to Ergast full references
+    DRIVER_MAP = {
+        "ver": "max_verstappen", "per": "perez",
+        "ham": "hamilton", "rus": "russell",
+        "lec": "leclerc", "sai": "sainz",
+        "nor": "norris", "pia": "piastri",
+        "alo": "alonso", "str": "stroll",
+        "gas": "gasly", "oco": "ocon", "doo": "doohan",
+        "alb": "albon", "col": "colapinto", "sar": "sargeant",
+        "tsu": "tsunoda", "law": "lawson", "ric": "ricciardo",
+        "bot": "bottas", "zho": "zhou",
+        "hul": "hulkenberg", "mag": "magnussen", "bea": "bearman",
+        "ant": "antonelli", "had": "hadjar", "bor": "bortoleto"
+    }
+
+    live_rows = []
+    for i, d_ref in enumerate(upcoming_drivers):
+        # Translate 'hul' to 'hulkenberg'
+        ergast_ref = DRIVER_MAP.get(d_ref.lower(), d_ref.lower())
+    
+        m_row = latest_mastery[latest_mastery['driverRef'] == ergast_ref]
+        p_row = latest_power[latest_power['driverRef'] == ergast_ref]
+
+        live_rows.append({
+            'driverId': d_ref.lower(),
+            'driverName': d_ref.upper(),
+            'grid': i + 1,
+            'driver_overall_avg': m_row['driver_overall_avg'].values[0] if not m_row.empty else 5.0,
+            'driver_track_avg': m_row['driver_track_avg'].values[0] if not m_row.empty else 5.0,
+            'driver_street_avg': m_row['driver_street_avg'].values[0] if not m_row.empty else 5.0,
+            'team_momentum': p_row['team_momentum'].values[0] if not p_row.empty else 0.0,
+            'driver_momentum': p_row['driver_momentum'].values[0] if not p_row.empty else 5.0,
+            'driver_racecraft_index': p_row['driver_racecraft_index'].values[0] if not p_row.empty else 0.0,
+            'tire_deg_index': latest_track['tire_deg_index'],
+            'is_street': latest_track['is_street']
         })
 
-    # Normalize probabilities so they equal 100% (1.0)
-    total_prob = sum(pred["winProbability"] for pred in predictions)
+    df_live = pd.DataFrame(live_rows)
+
+    # 4. Predict Win Probabilities
+    X_live = df_live[MODEL_FEATURES]
+    probs = model.predict_proba(X_live)[:, 1]
+
+    for i, prob in enumerate(probs):
+        live_rows[i]['winProbability'] = float(prob)
+
+    # Normalize probabilities to 1.0 (100%)
+    total_prob = sum(r['winProbability'] for r in live_rows)
     if total_prob > 0:
-        for pred in predictions:
-            pred["winProbability"] = round(pred["winProbability"] / total_prob, 3)
+        for r in live_rows:
+            r['winProbability'] = round(r['winProbability'] / total_prob, 3)
 
-    # Sort by highest probability
-    predictions.sort(key=lambda x: x["winProbability"], reverse=True)
+    # Sort descending by win probability
+    live_rows.sort(key=lambda x: x['winProbability'], reverse=True)
 
-    # 5. Format and Overwrite predictions.json
+    # 5. Format Top 10 for React UI
+    # 5. Format Top 10 for React UI
     final_output = []
-    for i, pred in enumerate(predictions[:10]):
+    for i, item in enumerate(live_rows[:10]):
         final_output.append({
-            "driverId": pred["driverId"],
-            "driverName": pred["driverName"],
-            "winProbability": pred["winProbability"],
-            "predictedPosition": i + 1
+            "driverId": item["driverId"],
+            "driverName": item["driverName"],
+            "winProbability": item["winProbability"],
+            "predictedPosition": i + 1,
+            "insights": {
+                "trackMastery": round(float(item["driver_track_avg"]), 1),
+                "teamMomentum": round(float(item["team_momentum"]), 1),
+                "driverMomentum": round(float(item["driver_momentum"]), 1)
+            }
         })
 
+    EXPORT_DIR.mkdir(parents=True, exist_ok=True)
     export_path = EXPORT_DIR / "predictions.json"
     with open(export_path, 'w', encoding='utf-8') as f:
         json.dump(final_output, f, indent=2, ensure_ascii=False)
 
-    print("   -> predictions.json overwritten with Random Forest inferences!")
+    print(f"✅ predictions.json updated with Random Forest predictions at {export_path}")
 
 if __name__ == "__main__":
     run_rf_predictions()

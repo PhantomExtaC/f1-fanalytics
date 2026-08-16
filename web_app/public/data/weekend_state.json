@@ -1,40 +1,148 @@
 {
   "track": {
-    "circuitName": "Circuit de Spa-Francorchamps",
-    "layoutType": "High Speed / Low Downforce",
-    "pitStopDelta": 19.5,
+    "circuitName": "Hungarian Grand Prix",
+    "layoutType": "High Downforce",
+    "pitStopDelta": 20.0,
     "drsZones": 2
   },
   "weather": {
-    "airTemp": 18,
-    "trackTemp": 24,
-    "rainProbability": 65,
-    "condition": "Overcast"
+    "airTemp": 23.3,
+    "trackTemp": 28.5,
+    "rainProbability": 0,
+    "condition": "Dry"
   },
   "telemetry": {
     "fastestSectors": {
-      "sector1": "Max Verstappen",
-      "sector2": "Lando Norris",
-      "sector3": "Max Verstappen"
+      "sector1": "HAM",
+      "sector2": "NOR",
+      "sector3": "HAM"
     },
     "longRunPace": [
       {
-        "driverId": "lando_norris",
-        "driverName": "Lando Norris",
-        "avgLapTime": "1:48.230",
-        "tireCompound": "Medium"
+        "driverId": "nor",
+        "driverName": "NOR",
+        "avgLapTime": "1:24.795",
+        "tireCompound": "MEDIUM"
       },
       {
-        "driverId": "max_verstappen",
-        "driverName": "Max Verstappen",
-        "avgLapTime": "1:48.450",
-        "tireCompound": "Hard"
+        "driverId": "rus",
+        "driverName": "RUS",
+        "avgLapTime": "1:25.037",
+        "tireCompound": "MEDIUM"
       },
       {
-        "driverId": "charles_leclerc",
-        "driverName": "Charles Leclerc",
-        "avgLapTime": "1:48.910",
-        "tireCompound": "Medium"
+        "driverId": "sai",
+        "driverName": "SAI",
+        "avgLapTime": "1:27.338",
+        "tireCompound": "HARD"
+      },
+      {
+        "driverId": "alb",
+        "driverName": "ALB",
+        "avgLapTime": "1:27.445",
+        "tireCompound": "HARD"
+      },
+      {
+        "driverId": "pia",
+        "driverName": "PIA",
+        "avgLapTime": "1:28.540",
+        "tireCompound": "MEDIUM"
+      },
+      {
+        "driverId": "lin",
+        "driverName": "LIN",
+        "avgLapTime": "1:28.566",
+        "tireCompound": "HARD"
+      },
+      {
+        "driverId": "bor",
+        "driverName": "BOR",
+        "avgLapTime": "1:29.517",
+        "tireCompound": "HARD"
+      },
+      {
+        "driverId": "law",
+        "driverName": "LAW",
+        "avgLapTime": "1:30.058",
+        "tireCompound": "HARD"
+      },
+      {
+        "driverId": "oco",
+        "driverName": "OCO",
+        "avgLapTime": "1:30.354",
+        "tireCompound": "MEDIUM"
+      },
+      {
+        "driverId": "ant",
+        "driverName": "ANT",
+        "avgLapTime": "1:31.066",
+        "tireCompound": "SOFT"
+      },
+      {
+        "driverId": "gas",
+        "driverName": "GAS",
+        "avgLapTime": "1:31.255",
+        "tireCompound": "MEDIUM"
+      },
+      {
+        "driverId": "per",
+        "driverName": "PER",
+        "avgLapTime": "1:31.415",
+        "tireCompound": "MEDIUM"
+      },
+      {
+        "driverId": "ham",
+        "driverName": "HAM",
+        "avgLapTime": "1:31.448",
+        "tireCompound": "MEDIUM"
+      },
+      {
+        "driverId": "lec",
+        "driverName": "LEC",
+        "avgLapTime": "1:31.526",
+        "tireCompound": "SOFT"
+      },
+      {
+        "driverId": "alo",
+        "driverName": "ALO",
+        "avgLapTime": "1:31.616",
+        "tireCompound": "SOFT"
+      },
+      {
+        "driverId": "bea",
+        "driverName": "BEA",
+        "avgLapTime": "1:32.487",
+        "tireCompound": "MEDIUM"
+      },
+      {
+        "driverId": "ver",
+        "driverName": "VER",
+        "avgLapTime": "1:33.538",
+        "tireCompound": "SOFT"
+      },
+      {
+        "driverId": "hul",
+        "driverName": "HUL",
+        "avgLapTime": "1:38.280",
+        "tireCompound": "HARD"
+      },
+      {
+        "driverId": "had",
+        "driverName": "HAD",
+        "avgLapTime": "1:39.288",
+        "tireCompound": "MEDIUM"
+      },
+      {
+        "driverId": "bot",
+        "driverName": "BOT",
+        "avgLapTime": "1:40.791",
+        "tireCompound": "MEDIUM"
+      },
+      {
+        "driverId": "col",
+        "driverName": "COL",
+        "avgLapTime": "1:41.313",
+        "tireCompound": "MEDIUM"
       }
     ]
   }

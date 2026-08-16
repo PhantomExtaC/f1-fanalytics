@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { fetchJson } from "../services/fetchJson";
 import SectionCard from "../components/cards/SectionCard"; 
 import type { WeekendState } from "../types/weekend";
+import ScrollWrapper from "../components/layout/ScrollWrapper";
+import { getPredictions } from '../services/predictions';
+import type { Prediction } from '../types/prediction';
 
 // Helper for Rain Probability text colors
 function getRainColorClass(probability: number): string {
@@ -42,11 +45,20 @@ export default function RaceHub() {
   const [weekendData, setWeekendData] = useState<WeekendState | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const [predictions, setPredictions] = useState<Prediction[]>([]);
+  const [isLoadingPredictions, setIsLoadingPredictions] = useState(true);
+
   useEffect(() => {
     fetchJson("/data/weekend_state.json")
       .then((data) => setWeekendData(data as WeekendState))
       .catch((err) => console.error("Error loading weekend state:", err))
       .finally(() => setIsLoading(false));
+  }, []);
+  useEffect(() => {
+    getPredictions()
+      .then((data) => setPredictions(data))
+      .catch((err) => console.error("Error loading predictions:", err))
+      .finally(() => setIsLoadingPredictions(false));
   }, []);
 
   // 2. Wrap bare text in a JSX element (e.g., <div> or <p>)
@@ -113,7 +125,7 @@ export default function RaceHub() {
 
       {/* Performance: Telemetry (Long Run Pace) */}
       <SectionCard title="Telemetry">
-        <div className="overflow-x-auto">
+        <ScrollWrapper minWidth="min-w-[500px]">
           <table className="w-full text-left font-mono text-sm">
             <thead>
               <tr className="border-b border-neutral-800 text-xs uppercase text-neutral-400">
@@ -126,23 +138,73 @@ export default function RaceHub() {
               {telemetry.longRunPace.map((run, index) => (
                 <tr key={run.driverName + index} className="hover:bg-neutral-900/40">
                   <td className="py-2.5 font-bold text-white">{run.driverName}</td>
-                  {/* Updated Dynamic Tire Compound Badge */}
-                    <td className="py-2.5 text-center">
+                  <td className="py-2.5 text-center">
                     <span className={`inline-block rounded px-2 py-0.5 text-xs font-black uppercase border ${getTireStyles(run.tireCompound)}`}>
                         {run.tireCompound}
                     </span>
-                    </td>
-
+                  </td>
                   <td className="py-2.5 text-right font-bold text-neutral-200">{run.avgLapTime}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-        </div>
+        </ScrollWrapper>
       </SectionCard>
 
+{/* Machine Learning Predictions - Spans full width of the grid */}
+      <div className="col-span-1 md:col-span-2 lg:col-span-3">
+        <SectionCard title="Random Forest Race Predictor">
+          {isLoadingPredictions ? (
+            <div className="flex h-32 items-center justify-center text-neutral-500 font-mono">
+              Processing Telemetry...
+            </div>
+          ) : predictions.length > 0 ? (
+            <ScrollWrapper minWidth="min-w-[700px]">
+              <table className="w-full text-left font-mono text-sm">
+                <thead>
+                  <tr className="border-b border-neutral-800 text-xs uppercase text-neutral-400">
+                    <th className="pb-3 font-medium pl-2">Pos</th>
+                    <th className="pb-3 font-medium">Driver</th>
+                    <th className="pb-3 font-medium text-right">Win Probability</th>
+                    <th className="pb-3 font-medium text-right sm:table-cell">Track Mastery</th>
+                    <th className="pb-3 font-medium text-right md:table-cell">Driver Form</th>
+                    <th className="pb-3 font-medium text-right md:table-cell pr-2">Car Momentum</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-neutral-800/40">
+                  {predictions.slice(0, 10).map((pred) => (
+                    <tr key={pred.driverId} className="hover:bg-neutral-900/40 transition-colors">
+                      <td className="py-3 pl-2">
+                        <span className="text-neutral-500 font-bold">P{pred.predictedPosition}</span>
+                      </td>
+                      <td className="py-3 font-bold text-white uppercase">{pred.driverName}</td>
+                      <td className="py-3 text-right">
+                        <span className="text-lg font-black text-emerald-400">
+                          {(pred.winProbability * 100).toFixed(1)}%
+                        </span>
+                      </td>
+                      <td className="py-3 text-right sm:table-cell text-sky-400">
+                        {pred.insights?.trackMastery ? pred.insights.trackMastery.toFixed(1) : "N/A"}
+                      </td>
+                      <td className="py-3 text-right md:table-cell text-neutral-300">
+                        {pred.insights?.driverMomentum ? pred.insights.driverMomentum.toFixed(1) : "N/A"}
+                      </td>
+                      <td className="py-3 text-right md:table-cell text-neutral-300 pr-2">
+                        {pred.insights?.teamMomentum ? pred.insights.teamMomentum.toFixed(1) : "N/A"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </ScrollWrapper>
+          ) : (
+            <div className="flex h-32 items-center justify-center text-neutral-500 font-mono">
+              No predictions available
+            </div>
+          )}
+        </SectionCard>
+      </div>
     </main>
   </div>
-);
-
+  );
 }

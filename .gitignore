@@ -1,11 +1,50 @@
-# Ignore local python virtual environments
+# =========================
+# 1. FastF1 & API Caches
+# =========================
+f1_cache/
+
+# =========================
+# 2. Virtual Environments
+# =========================
+# Your local virtual environment
 fanalytics/
 venv/
+env/
 .env
 
-# Ignore python cache files
+# =========================
+# 3. Python Artifacts
+# =========================
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
 
-# Ignore FastF1 local API caches
-analytics_engine/data/cache/
+# =========================
+# 4. Large Datasets & CSVs
+# =========================
+# Ignore downloaded Kaggle CSVs and locally generated ML matrices
+# (Pushing these will bloat your repo and can trigger GitHub's file size limits)
+analytics_engine/data/raw/*.csv
+analytics_engine/data/processed/*.csv
+
+# NOTE: If you manually update 'mastery_matrix.csv', 'power_ratings.csv', 
+# and 'track_profiles.csv', you should TRACK the features folder.
+# But if a script auto-generates them, uncomment the line below to ignore them too:
+# analytics_engine/data/features/*.csv
+
+# =========================
+# 5. Node / React App
+# =========================
+node_modules/
+dist/
+build/
+.npm/
+
+# =========================
+# 6. OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db

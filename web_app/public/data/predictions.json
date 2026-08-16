@@ -1,20 +1,112 @@
 [
   {
-    "driverId": "lando_norris",
-    "driverName": "Lando Norris",
-    "winProbability": 0.481,
-    "predictedPosition": 1
+    "driverId": "nor",
+    "driverName": "NOR",
+    "winProbability": 0.495,
+    "predictedPosition": 1,
+    "insights": {
+      "trackMastery": 2.0,
+      "teamMomentum": 17.5,
+      "driverMomentum": 7.8
+    }
   },
   {
-    "driverId": "max_verstappen",
-    "driverName": "Max Verstappen",
-    "winProbability": 0.346,
-    "predictedPosition": 2
+    "driverId": "rus",
+    "driverName": "RUS",
+    "winProbability": 0.165,
+    "predictedPosition": 2,
+    "insights": {
+      "trackMastery": 5.0,
+      "teamMomentum": 27.1,
+      "driverMomentum": 4.9
+    }
   },
   {
-    "driverId": "charles_leclerc",
-    "driverName": "Charles Leclerc",
-    "winProbability": 0.173,
-    "predictedPosition": 3
+    "driverId": "ant",
+    "driverName": "ANT",
+    "winProbability": 0.078,
+    "predictedPosition": 3,
+    "insights": {
+      "trackMastery": 16.0,
+      "teamMomentum": 27.1,
+      "driverMomentum": 6.9
+    }
+  },
+  {
+    "driverId": "ham",
+    "driverName": "HAM",
+    "winProbability": 0.071,
+    "predictedPosition": 4,
+    "insights": {
+      "trackMastery": 7.0,
+      "teamMomentum": 23.0,
+      "driverMomentum": 4.3
+    }
+  },
+  {
+    "driverId": "lin",
+    "driverName": "LIN",
+    "winProbability": 0.066,
+    "predictedPosition": 5,
+    "insights": {
+      "trackMastery": 5.0,
+      "teamMomentum": 0.0,
+      "driverMomentum": 5.0
+    }
+  },
+  {
+    "driverId": "sai",
+    "driverName": "SAI",
+    "winProbability": 0.039,
+    "predictedPosition": 6,
+    "insights": {
+      "trackMastery": 18.0,
+      "teamMomentum": 1.7,
+      "driverMomentum": 14.0
+    }
+  },
+  {
+    "driverId": "lec",
+    "driverName": "LEC",
+    "winProbability": 0.038,
+    "predictedPosition": 7,
+    "insights": {
+      "trackMastery": 3.0,
+      "teamMomentum": 23.0,
+      "driverMomentum": 7.3
+    }
+  },
+  {
+    "driverId": "pia",
+    "driverName": "PIA",
+    "winProbability": 0.012,
+    "predictedPosition": 8,
+    "insights": {
+      "trackMastery": 1.0,
+      "teamMomentum": 17.5,
+      "driverMomentum": 7.5
+    }
+  },
+  {
+    "driverId": "ver",
+    "driverName": "VER",
+    "winProbability": 0.011,
+    "predictedPosition": 9,
+    "insights": {
+      "trackMastery": 4.0,
+      "teamMomentum": 16.2,
+      "driverMomentum": 8.9
+    }
+  },
+  {
+    "driverId": "alb",
+    "driverName": "ALB",
+    "winProbability": 0.008,
+    "predictedPosition": 10,
+    "insights": {
+      "trackMastery": 6.0,
+      "teamMomentum": 1.7,
+      "driverMomentum": 16.3
+    }
   }
 ]
