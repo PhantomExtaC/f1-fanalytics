@@ -19,11 +19,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
           
       - name: Install Dependencies
         run: |
           cd analytics_engine
-          pip install pandas fastf1
+          python -m pip install --upgrade pip
+          pip install pandas fastf1 scikit-learn 
           
       - name: Execute LapLogic Pipeline
         run: |
@@ -36,9 +38,10 @@ jobs:
           git config --global user.email "bot@laplogic.local"
           
           # Stage the updated database and the newly generated React JSON files
-          git add analytics_engine/data/raw/master_historical.csv 
-          git add analytics_engine/data/features/
+          git add analytics_engine/data/
+          
           git add web_app/public/data/
+          
           
           # Commit only if changes exist
           git diff --staged --quiet || (git commit -m "Automated Data Engine Update [Weekly]" && git push)

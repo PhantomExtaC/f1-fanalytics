@@ -30,8 +30,10 @@ def execute_pipeline():
         SRC_DIR / "features" / "power_rating.py",
         SRC_DIR / "features" / "mastery.py",
         SRC_DIR / "features" / "generate_standings.py",
-        SRC_DIR / "export" / "json_builder.py"
-
+        SRC_DIR / "export" / "json_builder.py",
+        SRC_DIR / "export" / "weekend_builder.py",
+        SRC_DIR / "training" / "build_dataset.py",
+        SRC_DIR / "export" / "rf_prediction_engine.py"
     ]
     
     for script in pipeline_steps:
