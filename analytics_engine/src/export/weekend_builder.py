@@ -42,6 +42,7 @@ def build_weekend_state(year: int):
         try:
             session = fastf1.get_session(year, event['EventName'], 'FP2')
             session.load(telemetry=False, weather=True, messages=False)
+            _ = session.weather_data
             break # We found a valid session, break the loop!
         except Exception as e:
             print(f"      [!] FP2 unavailable (likely a Sprint weekend). Searching previous race...")
