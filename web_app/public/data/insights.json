@@ -1712,102 +1712,6 @@
     }
   },
   {
-    "driverId": "tsunoda",
-    "powerRating": {
-      "momentumIndex": 11.72,
-      "racecraftIndex": 2.45
-    },
-    "mastery": {
-      "overallAverage": 13.32,
-      "streetAverage": 13.37,
-      "highDegAverage": 13.22
-    },
-    "profile": {
-      "strength": "High-Degradation Circuits",
-      "weakness": "Street Circuits"
-    }
-  },
-  {
-    "driverId": "norris",
-    "powerRating": {
-      "momentumIndex": 7.69,
-      "racecraftIndex": -1.31
-    },
-    "mastery": {
-      "overallAverage": 7.39,
-      "streetAverage": 7.46,
-      "highDegAverage": 6.83
-    },
-    "profile": {
-      "strength": "High-Degradation Circuits",
-      "weakness": "Street Circuits"
-    }
-  },
-  {
-    "driverId": "max_verstappen",
-    "powerRating": {
-      "momentumIndex": 7.84,
-      "racecraftIndex": -2.73
-    },
-    "mastery": {
-      "overallAverage": 5.58,
-      "streetAverage": 5.61,
-      "highDegAverage": 5.13
-    },
-    "profile": {
-      "strength": "High-Degradation Circuits",
-      "weakness": "Street Circuits"
-    }
-  },
-  {
-    "driverId": "antonelli",
-    "powerRating": {
-      "momentumIndex": 5.84,
-      "racecraftIndex": -3.11
-    },
-    "mastery": {
-      "overallAverage": 8.18,
-      "streetAverage": 9.5,
-      "highDegAverage": 8.18
-    },
-    "profile": {
-      "strength": "High-Degradation Circuits",
-      "weakness": "Street Circuits"
-    }
-  },
-  {
-    "driverId": "leclerc",
-    "powerRating": {
-      "momentumIndex": 6.35,
-      "racecraftIndex": -1.83
-    },
-    "mastery": {
-      "overallAverage": 7.39,
-      "streetAverage": 7.43,
-      "highDegAverage": 6.9
-    },
-    "profile": {
-      "strength": "High-Degradation Circuits",
-      "weakness": "Street Circuits"
-    }
-  },
-  {
-    "driverId": "hamilton",
-    "powerRating": {
-      "momentumIndex": 4.28,
-      "racecraftIndex": 0.79
-    },
-    "mastery": {
-      "overallAverage": 5.2,
-      "streetAverage": 5.16,
-      "highDegAverage": 5.37
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
-    }
-  },
-  {
     "driverId": "hadjar",
     "powerRating": {
       "momentumIndex": 8.15,
@@ -1824,15 +1728,47 @@
     }
   },
   {
+    "driverId": "norris",
+    "powerRating": {
+      "momentumIndex": 6.47,
+      "racecraftIndex": -1.07
+    },
+    "mastery": {
+      "overallAverage": 7.35,
+      "streetAverage": 7.42,
+      "highDegAverage": 6.76
+    },
+    "profile": {
+      "strength": "High-Degradation Circuits",
+      "weakness": "Street Circuits"
+    }
+  },
+  {
+    "driverId": "antonelli",
+    "powerRating": {
+      "momentumIndex": 5.32,
+      "racecraftIndex": -1.82
+    },
+    "mastery": {
+      "overallAverage": 8.03,
+      "streetAverage": 9.24,
+      "highDegAverage": 8.03
+    },
+    "profile": {
+      "strength": "High-Degradation Circuits",
+      "weakness": "Street Circuits"
+    }
+  },
+  {
     "driverId": "russell",
     "powerRating": {
-      "momentumIndex": 7.97,
-      "racecraftIndex": -5.02
+      "momentumIndex": 7.8,
+      "racecraftIndex": -4.29
     },
     "mastery": {
-      "overallAverage": 9.42,
-      "streetAverage": 9.75,
-      "highDegAverage": 7.91
+      "overallAverage": 9.4,
+      "streetAverage": 9.73,
+      "highDegAverage": 7.9
     },
     "profile": {
       "strength": "High-Degradation Circuits",
@@ -1840,31 +1776,15 @@
     }
   },
   {
-    "driverId": "lawson",
+    "driverId": "hamilton",
     "powerRating": {
-      "momentumIndex": 9.79,
-      "racecraftIndex": 0.28
+      "momentumIndex": 4.41,
+      "racecraftIndex": 0.65
     },
     "mastery": {
-      "overallAverage": 12.13,
-      "streetAverage": 12.03,
-      "highDegAverage": 12.03
-    },
-    "profile": {
-      "strength": "High-Degradation Circuits",
-      "weakness": "Street Circuits"
-    }
-  },
-  {
-    "driverId": "hulkenberg",
-    "powerRating": {
-      "momentumIndex": 15.26,
-      "racecraftIndex": -3.23
-    },
-    "mastery": {
-      "overallAverage": 12.14,
-      "streetAverage": 12.03,
-      "highDegAverage": 12.31
+      "overallAverage": 5.2,
+      "streetAverage": 5.16,
+      "highDegAverage": 5.37
     },
     "profile": {
       "strength": "Street Circuits",
@@ -1872,15 +1792,15 @@
     }
   },
   {
-    "driverId": "arvid_lindblad",
+    "driverId": "leclerc",
     "powerRating": {
-      "momentumIndex": 10.27,
-      "racecraftIndex": -0.01
+      "momentumIndex": 5.93,
+      "racecraftIndex": -1.86
     },
     "mastery": {
-      "overallAverage": 11.2,
-      "streetAverage": 11.86,
-      "highDegAverage": 11.2
+      "overallAverage": 7.38,
+      "streetAverage": 7.41,
+      "highDegAverage": 6.87
     },
     "profile": {
       "strength": "High-Degradation Circuits",
@@ -1888,15 +1808,63 @@
     }
   },
   {
-    "driverId": "bortoleto",
+    "driverId": "piastri",
     "powerRating": {
-      "momentumIndex": 10.97,
-      "racecraftIndex": 1.27
+      "momentumIndex": 9.39,
+      "racecraftIndex": -3.93
     },
     "mastery": {
-      "overallAverage": 13.5,
-      "streetAverage": 13.17,
-      "highDegAverage": 13.5
+      "overallAverage": 7.04,
+      "streetAverage": 6.8,
+      "highDegAverage": 6.88
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "lawson",
+    "powerRating": {
+      "momentumIndex": 9.46,
+      "racecraftIndex": 0.77
+    },
+    "mastery": {
+      "overallAverage": 12.04,
+      "streetAverage": 11.92,
+      "highDegAverage": 11.92
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "hulkenberg",
+    "powerRating": {
+      "momentumIndex": 14.12,
+      "racecraftIndex": -2.46
+    },
+    "mastery": {
+      "overallAverage": 12.13,
+      "streetAverage": 12.02,
+      "highDegAverage": 12.28
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "alonso",
+    "powerRating": {
+      "momentumIndex": 16.08,
+      "racecraftIndex": 2.45
+    },
+    "mastery": {
+      "overallAverage": 8.89,
+      "streetAverage": 8.74,
+      "highDegAverage": 10.72
     },
     "profile": {
       "strength": "Street Circuits",
@@ -1906,8 +1874,8 @@
   {
     "driverId": "gasly",
     "powerRating": {
-      "momentumIndex": 10.61,
-      "racecraftIndex": 1.19
+      "momentumIndex": 10.87,
+      "racecraftIndex": 0.98
     },
     "mastery": {
       "overallAverage": 11.6,
@@ -1920,10 +1888,154 @@
     }
   },
   {
+    "driverId": "tsunoda",
+    "powerRating": {
+      "momentumIndex": 12.13,
+      "racecraftIndex": 1.28
+    },
+    "mastery": {
+      "overallAverage": 13.32,
+      "streetAverage": 13.37,
+      "highDegAverage": 13.23
+    },
+    "profile": {
+      "strength": "High-Degradation Circuits",
+      "weakness": "Street Circuits"
+    }
+  },
+  {
+    "driverId": "arvid_lindblad",
+    "powerRating": {
+      "momentumIndex": 10.22,
+      "racecraftIndex": -0.22
+    },
+    "mastery": {
+      "overallAverage": 11.09,
+      "streetAverage": 11.62,
+      "highDegAverage": 11.09
+    },
+    "profile": {
+      "strength": "High-Degradation Circuits",
+      "weakness": "Street Circuits"
+    }
+  },
+  {
+    "driverId": "bortoleto",
+    "powerRating": {
+      "momentumIndex": 10.97,
+      "racecraftIndex": 1.59
+    },
+    "mastery": {
+      "overallAverage": 13.43,
+      "streetAverage": 13.08,
+      "highDegAverage": 13.43
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "colapinto",
+    "powerRating": {
+      "momentumIndex": 12.22,
+      "racecraftIndex": 1.79
+    },
+    "mastery": {
+      "overallAverage": 14.13,
+      "streetAverage": 14.16,
+      "highDegAverage": 14.18
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "perez",
+    "powerRating": {
+      "momentumIndex": 17.45,
+      "racecraftIndex": 1.22
+    },
+    "mastery": {
+      "overallAverage": 9.62,
+      "streetAverage": 9.56,
+      "highDegAverage": 9.83
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "sainz",
+    "powerRating": {
+      "momentumIndex": 15.01,
+      "racecraftIndex": 0.71
+    },
+    "mastery": {
+      "overallAverage": 9.78,
+      "streetAverage": 9.76,
+      "highDegAverage": 10.0
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "albon",
+    "powerRating": {
+      "momentumIndex": 16.26,
+      "racecraftIndex": 0.35
+    },
+    "mastery": {
+      "overallAverage": 12.12,
+      "streetAverage": 12.28,
+      "highDegAverage": 12.3
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "bottas",
+    "powerRating": {
+      "momentumIndex": 18.85,
+      "racecraftIndex": -0.07
+    },
+    "mastery": {
+      "overallAverage": 9.38,
+      "streetAverage": 9.26,
+      "highDegAverage": 9.8
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "ocon",
+    "powerRating": {
+      "momentumIndex": 13.96,
+      "racecraftIndex": 1.49
+    },
+    "mastery": {
+      "overallAverage": 11.5,
+      "streetAverage": 11.48,
+      "highDegAverage": 11.75
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
     "driverId": "stroll",
     "powerRating": {
-      "momentumIndex": 18.36,
-      "racecraftIndex": 2.03
+      "momentumIndex": 17.38,
+      "racecraftIndex": 2.93
     },
     "mastery": {
       "overallAverage": 12.83,
@@ -1936,147 +2048,35 @@
     }
   },
   {
-    "driverId": "alonso",
+    "driverId": "bearman",
     "powerRating": {
-      "momentumIndex": 16.54,
-      "racecraftIndex": 2.55
-    },
-    "mastery": {
-      "overallAverage": 8.88,
-      "streetAverage": 8.72,
-      "highDegAverage": 10.7
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
-    }
-  },
-  {
-    "driverId": "colapinto",
-    "powerRating": {
-      "momentumIndex": 11.6,
-      "racecraftIndex": 2.64
-    },
-    "mastery": {
-      "overallAverage": 14.11,
-      "streetAverage": 14.13,
-      "highDegAverage": 14.16
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
-    }
-  },
-  {
-    "driverId": "ocon",
-    "powerRating": {
-      "momentumIndex": 13.51,
-      "racecraftIndex": 2.04
-    },
-    "mastery": {
-      "overallAverage": 11.48,
-      "streetAverage": 11.45,
-      "highDegAverage": 11.71
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
-    }
-  },
-  {
-    "driverId": "albon",
-    "powerRating": {
-      "momentumIndex": 16.09,
+      "momentumIndex": 14.51,
       "racecraftIndex": -0.01
     },
     "mastery": {
-      "overallAverage": 12.09,
-      "streetAverage": 12.24,
-      "highDegAverage": 12.24
+      "overallAverage": 12.18,
+      "streetAverage": 12.0,
+      "highDegAverage": 12.25
+    },
+    "profile": {
+      "strength": "Street Circuits",
+      "weakness": "High-Degradation Circuits"
+    }
+  },
+  {
+    "driverId": "max_verstappen",
+    "powerRating": {
+      "momentumIndex": 6.78,
+      "racecraftIndex": -1.87
+    },
+    "mastery": {
+      "overallAverage": 5.57,
+      "streetAverage": 5.6,
+      "highDegAverage": 5.1
     },
     "profile": {
       "strength": "High-Degradation Circuits",
       "weakness": "Street Circuits"
-    }
-  },
-  {
-    "driverId": "sainz",
-    "powerRating": {
-      "momentumIndex": 14.35,
-      "racecraftIndex": 0.87
-    },
-    "mastery": {
-      "overallAverage": 9.75,
-      "streetAverage": 9.72,
-      "highDegAverage": 9.93
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
-    }
-  },
-  {
-    "driverId": "bearman",
-    "powerRating": {
-      "momentumIndex": 13.51,
-      "racecraftIndex": 0.43
-    },
-    "mastery": {
-      "overallAverage": 12.0,
-      "streetAverage": 11.74,
-      "highDegAverage": 12.06
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
-    }
-  },
-  {
-    "driverId": "piastri",
-    "powerRating": {
-      "momentumIndex": 7.04,
-      "racecraftIndex": -1.02
-    },
-    "mastery": {
-      "overallAverage": 6.88,
-      "streetAverage": 6.61,
-      "highDegAverage": 6.63
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
-    }
-  },
-  {
-    "driverId": "perez",
-    "powerRating": {
-      "momentumIndex": 16.66,
-      "racecraftIndex": 1.27
-    },
-    "mastery": {
-      "overallAverage": 9.58,
-      "streetAverage": 9.52,
-      "highDegAverage": 9.73
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
-    }
-  },
-  {
-    "driverId": "bottas",
-    "powerRating": {
-      "momentumIndex": 18.15,
-      "racecraftIndex": 0.14
-    },
-    "mastery": {
-      "overallAverage": 9.33,
-      "streetAverage": 9.21,
-      "highDegAverage": 9.67
-    },
-    "profile": {
-      "strength": "Street Circuits",
-      "weakness": "High-Degradation Circuits"
     }
   }
 ]
