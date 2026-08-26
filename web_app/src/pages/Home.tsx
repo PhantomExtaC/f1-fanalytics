@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import EvaluationCard from "../components/cards/EvaluationCard";
 
 import StatCard from "../components/cards/StatCard";
 import SectionCard from "../components/cards/SectionCard";
@@ -184,6 +185,9 @@ export default function Home() {
             <div className="flex h-32 items-center justify-center text-slate-400">No predictions available</div>
           )}
         </SectionCard>
+
+        <EvaluationCard/>
+        
       </section>
     </div>
   );
