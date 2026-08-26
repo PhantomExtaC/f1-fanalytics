@@ -72,11 +72,16 @@ export default function RaceHub() {
   <div className="min-h-screen bg-neutral-950 p-6 text-neutral-100 font-sans">
     {/* Header Section */}
     <header className="mb-8 border-b border-neutral-800 pb-4">
-      <h1 className="font-mono text-4xl font-black uppercase tracking-tight text-white">
-        {track.circuitName}
-      </h1>
-      <p className="text-sm font-semibold uppercase tracking-widest text-red-500">
-        Live Race Weekend Hub
+      <div className="flex items-center gap-3">
+        <h1 className="font-mono text-4xl font-black uppercase tracking-tight text-white">
+          {track.circuitName}
+        </h1>
+        <span className="rounded bg-neutral-800 border border-neutral-700 px-2.5 py-0.5 text-xs font-semibold text-neutral-300">
+        Round Projected
+        </span>
+      </div>
+      <p className="text-sm font-semibold uppercase tracking-widest text-red-500 mt-1">
+        Race Weekend Hub
       </p>
     </header>
 

@@ -4,69 +4,87 @@ import json
 import os
 from pathlib import Path
 
-# Enable caching so we don't hit the API rate limit again!
+# Enable caching so we don't hit API rate limits
 CACHE_DIR = Path(__file__).resolve().parent.parent.parent.parent / "f1_cache"
 os.makedirs(CACHE_DIR, exist_ok=True)
 fastf1.Cache.enable_cache(str(CACHE_DIR))
 
 EXPORT_DIR = Path(__file__).resolve().parent.parent.parent.parent / "web_app" / "public" / "data"
 
+
 def format_timedelta(td):
     """Helper to format pandas timedelta into M:SS.mmm"""
-    if pd.isnull(td): return "N/A"
+    if pd.isnull(td):
+        return "N/A"
     total_seconds = td.total_seconds()
     minutes = int(total_seconds // 60)
     seconds = total_seconds % 60
     return f"{minutes}:{seconds:06.3f}"
 
+
 def build_weekend_state(year: int):
     print("📡 Booting LapLogic Telemetry Engine...")
-    
+
     schedule = fastf1.get_event_schedule(year)
     now = pd.Timestamp.now().tz_localize(None)
-    
-    # Look at past events so we are guaranteed to find completed FP2 data
-    past_events = schedule[schedule['EventDate'].dt.tz_localize(None) < now]
-    
-    if past_events.empty:
-        print("   -> No past events found for this year.")
-        return
 
+    # 1. Identify the upcoming target event from the schedule
+    upcoming_events = schedule[schedule['EventDate'].dt.tz_localize(None) >= now]
+    
+    if upcoming_events.empty:
+        # Fallback to the season finale if the season is finished
+        target_event = schedule.iloc[-1]
+        print(f"   -> Season completed. Defaulting to finale: {target_event['EventName']}")
+    else:
+        target_event = upcoming_events.iloc[0]
+        print(f"   -> Target Upcoming Race: {target_event['EventName']}")
+
+    # 2. Attempt to load live FP2 data for the target event; fallback to recent valid session if pending
     session = None
-    # Loop backwards through recent races until we find a valid FP2 (skipping Sprints/Cancellations)
-    for _, event in past_events.iloc[::-1].iterrows():
-        if event['EventFormat'] == 'testing':
-            continue
+    
+    try:
+        print(f"   -> Checking for live FP2 session: {target_event['EventName']}...")
+        live_session = fastf1.get_session(year, target_event['EventName'], 'FP2')
+        live_session.load(telemetry=False, weather=True, messages=False)
+        _ = live_session.weather_data
+        session = live_session
+        print(f"   -> ✅ Successfully loaded live FP2 for {target_event['EventName']}")
+    except Exception:
+        print(f"   -> Live FP2 not yet available for {target_event['EventName']}. Loading latest completed telemetry...")
+        past_events = schedule[schedule['EventDate'].dt.tz_localize(None) < now]
         
-        print(f"   -> Attempting to load FP2 for: {event['EventName']}")
-        try:
-            session = fastf1.get_session(year, event['EventName'], 'FP2')
-            session.load(telemetry=False, weather=True, messages=False)
-            _ = session.weather_data
-            break # We found a valid session, break the loop!
-        except Exception as e:
-            print(f"      [!] FP2 unavailable (likely a Sprint weekend). Searching previous race...")
-            session = None
+        for _, event in past_events.iloc[::-1].iterrows():
+            if event['EventFormat'] == 'testing':
+                continue
+            try:
+                hist_session = fastf1.get_session(year, event['EventName'], 'FP2')
+                hist_session.load(telemetry=False, weather=True, messages=False)
+                _ = hist_session.weather_data
+                session = hist_session
+                print(f"   -> Using baseline telemetry from: {event['EventName']}")
+                break
+            except Exception:
+                continue
 
     if session is None:
-        print("   -> Could not find any valid FP2 data for the season.")
+        print("❌ Could not load any valid session data.")
         return
 
-    # 3. Environment: Weather & Track
+    # 3. Environment: Weather & Track Profile (Anchored to Target Event)
     weather = session.weather_data.iloc[-1] if not session.weather_data.empty else None
-    
+
     state_data = {
         "track": {
-            "circuitName": session.event['EventName'],
-            "layoutType": "High Downforce", # Default fallback
+            "circuitName": str(target_event['EventName']),
+            "layoutType": "High Downforce",
             "pitStopDelta": 20.0,
             "drsZones": 2
         },
         "weather": {
-            "airTemp": round(weather['AirTemp'], 1) if weather is not None else 25.0,
-            "trackTemp": round(weather['TrackTemp'], 1) if weather is not None else 35.0,
+            "airTemp": round(float(weather['AirTemp']), 1) if weather is not None and 'AirTemp' in weather else 25.0,
+            "trackTemp": round(float(weather['TrackTemp']), 1) if weather is not None and 'TrackTemp' in weather else 35.0,
             "rainProbability": 0,
-            "condition": "Wet" if weather is not None and weather['Rainfall'] > 0 else "Dry"
+            "condition": "Wet" if (weather is not None and weather.get('Rainfall', 0) > 0) else "Dry"
         },
         "telemetry": {
             "fastestSectors": {},
@@ -74,38 +92,37 @@ def build_weekend_state(year: int):
         }
     }
 
-    # 4. Performance: Mini-Sectors
+    # 4. Mini-Sectors
     laps = session.laps
     if not laps.empty:
-        best_s1 = laps.loc[laps['Sector1Time'].idxmin()]
-        best_s2 = laps.loc[laps['Sector2Time'].idxmin()]
-        best_s3 = laps.loc[laps['Sector3Time'].idxmin()]
-        
+        s1_laps = laps.dropna(subset=['Sector1Time'])
+        s2_laps = laps.dropna(subset=['Sector2Time'])
+        s3_laps = laps.dropna(subset=['Sector3Time'])
+
         state_data["telemetry"]["fastestSectors"] = {
-            "sector1": str(best_s1['Driver']),
-            "sector2": str(best_s2['Driver']),
-            "sector3": str(best_s3['Driver'])
+            "sector1": str(s1_laps.loc[s1_laps['Sector1Time'].idxmin()]['Driver']) if not s1_laps.empty else "N/A",
+            "sector2": str(s2_laps.loc[s2_laps['Sector2Time'].idxmin()]['Driver']) if not s2_laps.empty else "N/A",
+            "sector3": str(s3_laps.loc[s3_laps['Sector3Time'].idxmin()]['Driver']) if not s3_laps.empty else "N/A"
         }
 
-    # 5. Performance: Long Run Pace (Race Simulation)
+    # 5. Long Run Pace (Race Simulation)
     clean_laps = laps.pick_wo_box().pick_track_status('1')
     driver_pace = []
-    
+
     for driver in session.results['Abbreviation']:
-        # Fixed the deprecated pick_driver method to pick_drivers
         driver_laps = clean_laps.pick_drivers(driver)
-        
-        if len(driver_laps) >= 5:
+
+        if len(driver_laps) >= 4:
             stints = driver_laps.groupby('Stint')
             longest_stint = stints.size().idxmax()
             stint_laps = driver_laps[driver_laps['Stint'] == longest_stint]
-            
-            if len(stint_laps) > 3:
+
+            if len(stint_laps) > 2:
                 stint_laps = stint_laps.sort_values('LapTime').iloc[1:-1]
-            
+
             avg_time = stint_laps['LapTime'].mean()
-            compound = stint_laps['Compound'].iloc[0]
-            
+            compound = stint_laps['Compound'].iloc[0] if ('Compound' in stint_laps and not stint_laps['Compound'].empty) else "MEDIUM"
+
             driver_pace.append({
                 "driverId": str(driver).lower(),
                 "driverName": str(driver),
@@ -114,12 +131,11 @@ def build_weekend_state(year: int):
                 "tireCompound": str(compound)
             })
 
-    # Sort by fastest average pace
+    # Sort descending by pace
     driver_pace.sort(key=lambda x: x['rawSeconds'])
     for pace in driver_pace:
         del pace['rawSeconds']
-        
-    # Removed the [:10] slice so it returns all 20 drivers
+
     state_data["telemetry"]["longRunPace"] = driver_pace
 
     # 6. Export to JSON
@@ -127,10 +143,10 @@ def build_weekend_state(year: int):
     export_path = EXPORT_DIR / "weekend_state.json"
     with open(export_path, 'w', encoding='utf-8') as f:
         json.dump(state_data, f, indent=2, ensure_ascii=False)
-        
-    print(f"✅ weekend_state.json generated successfully with {len(driver_pace)} drivers!")
+
+    print(f"✅ weekend_state.json generated successfully for '{target_event['EventName']}' with {len(driver_pace)} drivers!")
+
 
 if __name__ == "__main__":
-    # Dynamically fetch the current year
     current_year = pd.Timestamp.now().year
     build_weekend_state(current_year)
