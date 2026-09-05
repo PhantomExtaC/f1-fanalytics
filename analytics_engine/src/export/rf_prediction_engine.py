@@ -100,8 +100,7 @@ def run_rf_predictions():
             'team_momentum': p_row['team_momentum'].values[0] if not p_row.empty else 0.0,
             'driver_momentum': p_row['driver_momentum'].values[0] if not p_row.empty else 5.0,
             'driver_racecraft_index': p_row['driver_racecraft_index'].values[0] if not p_row.empty else 0.0,
-            'tire_deg_index': latest_track['tire_deg_index'],
-            'is_street': latest_track['is_street']
+            'tire_deg_index': latest_track['tire_deg_index']
         })
 
     df_live = pd.DataFrame(live_rows)
